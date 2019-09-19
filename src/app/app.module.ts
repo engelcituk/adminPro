@@ -7,8 +7,12 @@ import { APP_ROUTES } from './app.routes';
 // modulos
 import { PageModule } from './pages/pages.module';
 
+// temporal
+import { FormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
+
 
 
 @NgModule({
@@ -16,7 +20,12 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     LoginComponent,
   ],
-  imports: [BrowserModule, APP_ROUTES, PageModule],
+  imports: [
+  BrowserModule,
+    APP_ROUTES,
+    PageModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

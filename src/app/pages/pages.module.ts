@@ -1,30 +1,47 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { ChartsModule } from 'ng2-charts';
+
 // importo rutas hijas
 import { PAGES_ROUTES } from './pages.routes';
 
 
-import { SharedModule } from './../shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 
 import { PagesComponent } from './pages.component';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
-import { Graficas1Component } from './graficas1/graficas1.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { ReportesComponent } from './dashboard/reportes/reportes.component';
+import { AgendaComponent } from './dashboard/agenda/agenda.component';
+import { ProgressComponent } from './dashboard/progress/progress.component';
+import { GraficasComponent } from './dashboard/graficas/graficas.component';
+
+// temporal
+import { IncrementadorComponent } from './../components/incrementador/incrementador.component';
+import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+
 
 @NgModule({
   declarations: [
       PagesComponent,
       DashboardComponent,
+      ReportesComponent,
+      AgendaComponent,
       ProgressComponent,
-      Graficas1Component],
+      IncrementadorComponent,
+      GraficasComponent,
+      GraficoDonaComponent
+    ],
   exports: [
       DashboardComponent,
-      ProgressComponent,
-      Graficas1Component
+      ReportesComponent,
+      AgendaComponent
     ],
   imports: [
     SharedModule,
-    PAGES_ROUTES
+    PAGES_ROUTES,
+    FormsModule,
+    ChartsModule
   ],
 providers: []
 })

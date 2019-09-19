@@ -1,9 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
 
 import { PagesComponent } from './pages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProgressComponent } from './progress/progress.component';
-import { Graficas1Component } from './graficas1/graficas1.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { ReportesComponent } from './dashboard/reportes/reportes.component';
+import { AgendaComponent } from './dashboard/agenda/agenda.component';
+import { ProgressComponent } from './dashboard/progress/progress.component';
+import { GraficasComponent } from './dashboard/graficas/graficas.component';
 
 const pageRoutes: Routes = [
   {
@@ -11,8 +13,10 @@ const pageRoutes: Routes = [
     component: PagesComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'reportes', component: ReportesComponent },
+      { path: 'agenda', component: AgendaComponent },
       { path: 'progress', component: ProgressComponent },
-      { path: 'graficas1', component: Graficas1Component },
+      { path: 'graficas', component: GraficasComponent },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
     ]
   }
