@@ -6,6 +6,7 @@ import { ReportesComponent } from './dashboard/reportes/reportes.component';
 import { AgendaComponent } from './dashboard/agenda/agenda.component';
 import { ProgressComponent } from './dashboard/progress/progress.component';
 import { GraficasComponent } from './dashboard/graficas/graficas.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 const pageRoutes: Routes = [
   {
@@ -17,6 +18,7 @@ const pageRoutes: Routes = [
       { path: 'agenda', component: AgendaComponent },
       { path: 'progress', component: ProgressComponent },
       { path: 'graficas', component: GraficasComponent },
+      { path: 'account-settings', component: AccountSettingsComponent },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
     ]
   }
