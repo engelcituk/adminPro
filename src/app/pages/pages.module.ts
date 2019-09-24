@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 
 // importo rutas hijas
@@ -22,6 +22,10 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './dashboard/promesas/promesas.component';
 import { RxjsComponent } from './dashboard/rxjs/rxjs.component';
+import { HotelesComponent } from './configuracion/c_hotel/hoteles/hoteles.component';
+import { HotelComponent } from './configuracion/c_hotel/hotel/hotel.component';
+import { HorariosComponent } from './configuracion/cHorarios/horarios/horarios.component';
+import { HorarioComponent } from './configuracion/cHorarios/horario/horario.component';
 
 
 @NgModule({
@@ -36,7 +40,11 @@ import { RxjsComponent } from './dashboard/rxjs/rxjs.component';
       GraficoDonaComponent,
       AccountSettingsComponent,
       PromesasComponent,
-      RxjsComponent
+      RxjsComponent,
+      HotelesComponent,
+      HotelComponent,
+      HorariosComponent,
+      HorarioComponent
     ],
   exports: [
       DashboardComponent,
@@ -47,6 +55,7 @@ import { RxjsComponent } from './dashboard/rxjs/rxjs.component';
     SharedModule,
     PAGES_ROUTES,
     FormsModule,
+    ReactiveFormsModule,
     ChartsModule
   ],
 providers: []

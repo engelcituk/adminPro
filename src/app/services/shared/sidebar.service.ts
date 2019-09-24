@@ -32,6 +32,18 @@ export class SidebarService {
           titulo: 'Rxjs', url: '/rxjs'
         }
       ]
+    },
+    {
+      titulo: 'Configuración',
+      icono: 'mdi mdi-settings',
+      submenu: [
+        {
+          titulo: 'Hoteles', url: '/hoteles'
+        },
+        {
+          titulo: 'Horarios', url: '/horarios'
+        }
+      ]
     }
   ];
 

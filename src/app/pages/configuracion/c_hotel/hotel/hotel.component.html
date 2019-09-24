@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/hoteles']" class="btn btn-warning">
+                        <i class="fa fa-arrow-left"></i>
+                        Volver
+                    </button>
+                </div>
+                <form ngNativeValidate class="row" [formGroup]="formHotel" (ngSubmit)="registrarHotel()">
+                    <div class="col-4">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Nombre hotel</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-hotel"></i>
+                                    </span>
+                                </span>
+                                <input formControlName="name" name="name" type="text" required class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Código</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-code"></i>
+                                    </span>
+                                </span>
+                                <input formControlName="codigo" name="codigo" type="text" required
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Empresa</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-file-signature"></i>
+                                    </span>
+                                </span>
+                                <input formControlName="empresa" name="empresa" type="text" required class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-right">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

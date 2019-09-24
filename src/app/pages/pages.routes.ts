@@ -9,6 +9,10 @@ import { GraficasComponent } from './dashboard/graficas/graficas.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './dashboard/promesas/promesas.component';
 import { RxjsComponent } from './dashboard/rxjs/rxjs.component';
+import { HotelesComponent } from './configuracion/c_hotel/hoteles/hoteles.component';
+import { HotelComponent } from './configuracion/c_hotel/hotel/hotel.component';
+import { HorariosComponent } from './configuracion/cHorarios/horarios/horarios.component';
+import { HorarioComponent } from './configuracion/cHorarios/horario/horario.component';
 
 const pageRoutes: Routes = [
   {
@@ -23,6 +27,11 @@ const pageRoutes: Routes = [
       { path: 'account-settings', component: AccountSettingsComponent, data: { titulo: 'Ajustes del tema'} },
       { path: 'promesas', component: PromesasComponent, data: { titulo: 'Promesas'} },
       { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
+      // area de configuracion
+      { path: 'hoteles', component: HotelesComponent, data: { titulo: 'Hoteles' }  },
+      { path: 'hoteles/create', component: HotelComponent,  data: { titulo: 'Crear hotel' }},
+      { path: 'horarios', component: HorariosComponent, data: { titulo: 'Horarios' } },
+      { path: 'horarios/create', component: HorarioComponent, data: { titulo: 'Crear horario' } },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
     ]
   }
