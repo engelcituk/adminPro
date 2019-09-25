@@ -44,7 +44,13 @@ export class HotelComponent implements OnInit {
 
     );
 
-    console.log(this.formHotel.value);
+    // console.log(this.formHotel.value);
+    Swal.fire({
+      title: 'Espere',
+      text: 'Guardando información',
+      type: 'info',
+      allowOutsideClick: true
+    });
 
     this.hotelService.crearHotel(hotel)
       .subscribe(respuesta => {

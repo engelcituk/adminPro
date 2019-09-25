@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { HotelService } from 'src/app/services/service.index';
 import { Hotel } from '../../../../models/hotel.model';
 
+import Swal from 'sweetalert2';
+
+
 @Component({
   selector: 'app-hoteles',
   templateUrl: './hoteles.component.html',
@@ -12,6 +15,7 @@ export class HotelesComponent implements OnInit {
   hoteles: Hotel[] = [];
   desde: number = 0;
   totalRegistros: number = 0;
+  cargando: boolean;
 
   constructor(public hotelService: HotelService) { }
 
@@ -21,15 +25,34 @@ export class HotelesComponent implements OnInit {
 
   // cargar hoteles
   cargarHoteles() {
-    this.hotelService.cargarHoteles().subscribe(respuesta => {
-      console.log(respuesta);
+
+    this.cargando = true;
+
+    this.hotelService.cargarHoteles().subscribe( ( respuesta: any )  => {
+
+      this.hoteles = respuesta.hoteles;
+      this.totalRegistros = respuesta.total;
+      this.cargando = false;
+
     });
   }
 
   cambiarDesde(valor: number) {
 
     const desde = this.desde + valor;
-    console.log(desde);
 
+    if ( desde >= this.totalRegistros) {
+      return;
+    }
+    if (desde < 0) {
+      return;
+    }
+
+    this.desde += valor;
+    console.log(desde);
+    this.cargarHoteles();
+  }
+  buscarHotel(termino: string) {
+    console.log(termino);
   }
 }

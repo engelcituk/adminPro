@@ -9,8 +9,8 @@ import { GraficasComponent } from './dashboard/graficas/graficas.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './dashboard/promesas/promesas.component';
 import { RxjsComponent } from './dashboard/rxjs/rxjs.component';
-import { HotelesComponent } from './configuracion/c_hotel/hoteles/hoteles.component';
-import { HotelComponent } from './configuracion/c_hotel/hotel/hotel.component';
+import { HotelesComponent } from './configuracion/cHoteles/hoteles/hoteles.component';
+import { HotelComponent } from './configuracion/cHoteles/hotel/hotel.component';
 import { HorariosComponent } from './configuracion/cHorarios/horarios/horarios.component';
 import { HorarioComponent } from './configuracion/cHorarios/horario/horario.component';
 

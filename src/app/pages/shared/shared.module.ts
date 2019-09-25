@@ -22,7 +22,8 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
-    NopagefoundComponent
+    NopagefoundComponent,
+    CommonModule
   ],
   providers: []
 })

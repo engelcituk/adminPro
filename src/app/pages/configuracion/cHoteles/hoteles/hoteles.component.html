@@ -16,7 +16,9 @@
                                 <i class="fas fa-hotel"></i>
                             </span>
                         </span>
-                        <input #input type="text" class="form-control" placeholder="Buscar hotel">
+
+                        <input #input type="text" (keyup)="buscarHotel( input.value )" class="form-control" placeholder="Buscar hotel">
+
                         <span class="input-group-addon input-group-append">
                             <span class="input-group-text">
                                 <i class="fas fa-search"></i>
@@ -28,7 +30,7 @@
         </div>
     </div>
 </div>
-<div class="row animated fadeIn">
+<div class="row animated fadeIn" *ngIf="cargando">
     <div class="col-12">
         <div class="alert alert-danger text-center">
             <strong>Cargando</strong>
@@ -44,7 +46,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Hoteles registrados (<small>123</small>)</h3>
+                <h3 class="card-title">Hoteles registrados: <span class="badge badge-success">{{totalRegistros}}</span></h3>
                 <table class="table table-hover">
                     <thead>
                         <tr>
@@ -56,17 +58,15 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>vd</td>
-                            <td>vd</td>
-                            <td>vd</td>
-                            <td>vd</td>
+                        <tr *ngFor="let hotel of hoteles ; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{hotel.name}}</td>
+                            <td>{{hotel.codigo}}</td>
+                            <td>{{hotel.empresa}}</td>
                             <td>
                                 <button class="btn btn-primary">
-                                    <i class="fas fa-save"></i>
-                                </button>
-
-                                <button class="btn btn-danger">
+                                    <i class="fas fa-edit"></i>
+                                </button> &nbsp;<button class="btn btn-danger">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
