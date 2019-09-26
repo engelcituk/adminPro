@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Hotel } from 'src/app/models/hotel.model';
+import { Hotel } from '../../models/hotel.model';
+import { map } from 'rxjs/operators';
+import Swal from 'sweetalert2';
 
 
 @Injectable({
@@ -9,22 +11,50 @@ import { Hotel } from 'src/app/models/hotel.model';
 export class HotelService {
 
   constructor(public http: HttpClient) {
-    console.log('hotel servicio cargado');
+    // console.log('hotel servicio cargado');
   }
 
-  crearHotel(hotel: Hotel) {
+  // funcion tanto para guardar POST y actualizar (PUT)
+  saveHotel(hotel: Hotel) {
 
     const url = 'Hoteles/add';
 
-    return this.http.post(url, hotel);
+    if (hotel.id) {
+      // actualizo el dato
+      return this.http.post(url, hotel).pipe(
+        map((respuesta: any) => {
+          Swal.fire('Hotel actualizado', hotel.name, 'success');
+          return respuesta.hotel;
+        }));
+
+    } else {
+      // creo el hotel
+      return this.http.post(url, hotel).pipe(
+        map( (respuesta: any) => {
+          Swal.fire('Hotel creado', hotel.name, 'success');
+          return respuesta.hotel;
+        }));
+    }
 
   }
 
-  cargarHoteles(desde: number = 0) {
+  getHoteles(desde: number = 0) {
 
     const url = 'Hoteles/getAll';
 
     return this.http.get(url);
+
+  }
+
+  getHotel(id: number) {
+    const url = 'Hoteles/';
+    return this.http.get(url + id).pipe(
+      map( (respuesta: any ) => respuesta.hoteles));
+  }
+
+  deleteHotel(id: number) {
+    const url = 'Hoteles/';
+    return this.http.delete(url + id);
 
   }
 }

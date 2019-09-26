@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row animated fadeIn">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
@@ -8,7 +8,7 @@
                         Volver
                     </button>
                 </div>
-                <form ngNativeValidate class="row" [formGroup]="formHotel" (ngSubmit)="registrarHotel()">
+                <form ngNativeValidate class="row" #formHotel="ngForm" (ngSubmit)="saveHotel(formHotel)">
                     <div class="col-4">
                         <div class="form-group m-b-0">
                             <label class="control-label">Nombre hotel</label>
@@ -18,7 +18,7 @@
                                         <i class="fas fa-hotel"></i>
                                     </span>
                                 </span>
-                                <input formControlName="name" name="name" type="text" required class="form-control">
+                                <input [(ngModel)]="hotel.name" name="name" type="text" required class="form-control">
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                                         <i class="fas fa-code"></i>
                                     </span>
                                 </span>
-                                <input formControlName="codigo" name="codigo" type="text" required
+                                <input [(ngModel)]="hotel.codigo" name="codigo" type="text" required
                                     class="form-control">
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                                         <i class="fas fa-file-signature"></i>
                                     </span>
                                 </span>
-                                <input formControlName="empresa" name="empresa" type="text" required class="form-control">
+                                <input [(ngModel)]="hotel.empresa" name="empresa" type="text" required class="form-control">
                             </div>
                         </div>
                     </div>

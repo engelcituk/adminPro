@@ -20,15 +20,15 @@ export class HotelesComponent implements OnInit {
   constructor(public hotelService: HotelService) { }
 
   ngOnInit() {
-    this.cargarHoteles();
+    this.getHoteles();
   }
 
   // cargar hoteles
-  cargarHoteles() {
+  getHoteles() {
 
     this.cargando = true;
 
-    this.hotelService.cargarHoteles().subscribe( ( respuesta: any )  => {
+    this.hotelService.getHoteles().subscribe( ( respuesta: any )  => {
 
       this.hoteles = respuesta.hoteles;
       this.totalRegistros = respuesta.total;
@@ -50,9 +50,29 @@ export class HotelesComponent implements OnInit {
 
     this.desde += valor;
     console.log(desde);
-    this.cargarHoteles();
+    this.getHoteles();
   }
   buscarHotel(termino: string) {
     console.log(termino);
   }
+
+  borrarHotel(hotel: Hotel, indice: number) {
+
+    Swal.fire({
+      title: '¿Está seguro?',
+      text: `De borrar a ${hotel.name}`,
+      type: 'question',
+      cancelButtonColor: '#DD6B55',
+      showConfirmButton: true,
+      showCancelButton: true
+    }).then(borrar => {
+      if (borrar.value) {
+        this.hoteles.splice(indice, 1);
+
+        this.hotelService.deleteHotel(hotel.id).subscribe();
+      }
+    });
+
+  }
+
 }

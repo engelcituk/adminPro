@@ -3,7 +3,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="col text-right">
-                    <button [routerLink]="['/hoteles/create']" class="btn btn-primary">
+                    <button [routerLink]="['/hotel','nuevo']" routerLinkActive="router-link-active"  class="btn btn-primary">
                         <i class="fa fa-plus"></i>
                         Agregar
                     </button>                
@@ -61,12 +61,14 @@
                         <tr *ngFor="let hotel of hoteles ; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{hotel.name}}</td>
-                            <td>{{hotel.codigo}}</td>
+                            <td>{{hotel.codigo}}</td>  
                             <td>{{hotel.empresa}}</td>
                             <td>
-                                <button class="btn btn-primary">
+                                <button class="btn btn-primary" [routerLink]="['/hotel',hotel.id]">
                                     <i class="fas fa-edit"></i>
-                                </button> &nbsp;<button class="btn btn-danger">
+                                </button> &nbsp;
+                   
+                                <button class="btn btn-danger"  (click)="borrarHotel(hotel, i)">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

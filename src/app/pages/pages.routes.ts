@@ -29,7 +29,7 @@ const pageRoutes: Routes = [
       { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
       // area de configuracion
       { path: 'hoteles', component: HotelesComponent, data: { titulo: 'Hoteles' }  },
-      { path: 'hoteles/create', component: HotelComponent,  data: { titulo: 'Crear hotel' }},
+      { path: 'hotel/:id', component: HotelComponent, data: { titulo: 'Editar hotel' } },
       { path: 'horarios', component: HorariosComponent, data: { titulo: 'Horarios' } },
       { path: 'horarios/create', component: HorarioComponent, data: { titulo: 'Crear horario' } },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
