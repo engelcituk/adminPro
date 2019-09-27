@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
+        <div class="card"> 
             <div class="card-body">
                 <div class="col text-right">
                     <button [routerLink]="['/horarios']" class="btn btn-warning">
@@ -8,7 +8,7 @@
                         Volver
                     </button>
                 </div>
-                <form ngNativeValidate class="row" [formGroup]="forma" (ngSubmit)="registrarHorario()">
+                <form ngNativeValidate class="row" #formHorario="ngForm" (ngSubmit)="saveHorario(formHorario)">
                     <div class="col-6">
                         <div class="form-group m-b-0">
                             <label class="control-label">Hora</label>
@@ -18,12 +18,8 @@
                                         <i class="fas fa-clock"></i>
                                     </span>
                                 </span>
-                                <input 
-                                    formControlName="hora"
-                                    name="hora"
-                                    type="text"
-                                    required
-                                    class="form-control">
+                                <input [(ngModel)]="horario.hora" name="hora" type="text" required class="form-control">
+
                             </div>
                         </div>
                     </div>
@@ -36,12 +32,10 @@
                                         <i class="fas fa-hotel"></i>
                                     </span>
                                 </span>
-                                <input
-                                    formControlName="idHotel"
-                                    name="idHotel"
-                                    type="text"
-                                    required
-                                    class="form-control">
+                                <select [(ngModel)]="horario.idHotel" name="idHotel" class="form-control custom-select" required>
+                                    <option value="">Seleccione hotel</option>
+                                    <option *ngFor="let hotel of hoteles" [value]="hotel.id">{{hotel.name}}</option>                                                        
+                                </select>
                             </div>
                         </div>
                     </div>

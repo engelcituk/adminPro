@@ -21,5 +21,12 @@ export class HorarioService {
     return this.http.post(url, horario);
 
   }
+  getHorarios(desde: number = 0) {
+
+    const url = 'Horarios/getAll';
+
+    return this.http.get(url);
+
+  }
 
 }

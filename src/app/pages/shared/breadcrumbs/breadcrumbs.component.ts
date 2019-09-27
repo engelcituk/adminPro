@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivationEnd } from '@angular/router';
+import { Router, ActivationEnd} from '@angular/router';
 import { filter, map } from 'rxjs/operators';
 import { Title, Meta, MetaDefinition } from '@angular/platform-browser';
 
@@ -17,8 +17,9 @@ export class BreadcrumbsComponent implements OnInit {
               private title: Title,
               private meta: Meta ) {
 
+
     this.obtenerDataRuta().subscribe( respuestaData => {
-      console.log(respuestaData);
+      // console.log(respuestaData);
       this.titulo = respuestaData.titulo;
       this.title.setTitle(this.titulo);
 
@@ -34,6 +35,7 @@ export class BreadcrumbsComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
   obtenerDataRuta() {
     return this.ruta.events.pipe(

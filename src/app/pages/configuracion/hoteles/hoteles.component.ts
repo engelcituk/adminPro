@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelService } from 'src/app/services/service.index';
-import { Hotel } from '../../../../models/hotel.model';
+import { Hotel } from '../../../models/hotel.model';
 
 import Swal from 'sweetalert2';
 

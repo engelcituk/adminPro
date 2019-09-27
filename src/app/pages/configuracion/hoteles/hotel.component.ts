@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HotelService } from '../../../../services/service.index';
-import { Hotel } from '../../../../models/hotel.model';
+import { HotelService } from '../../../services/service.index';
+import { Hotel } from '../../../models/hotel.model';
 import Swal from 'sweetalert2';
 
 
@@ -41,7 +41,6 @@ export class HotelComponent implements OnInit {
       return;
     }
     this.hotelService.saveHotel(this.hotel).subscribe( hotel => {
-      console.log(hotel);
       this.hotel.id = hotel.id;
       this.router.navigate(['/hotel', this.hotel.id]);
     });

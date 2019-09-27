@@ -22,10 +22,10 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './dashboard/promesas/promesas.component';
 import { RxjsComponent } from './dashboard/rxjs/rxjs.component';
-import { HotelesComponent } from './configuracion/cHoteles/hoteles/hoteles.component';
-import { HotelComponent } from './configuracion/cHoteles/hotel/hotel.component';
-import { HorariosComponent } from './configuracion/cHorarios/horarios/horarios.component';
-import { HorarioComponent } from './configuracion/cHorarios/horario/horario.component';
+import { HotelesComponent } from './configuracion/hoteles/hoteles.component';
+import { HotelComponent } from './configuracion/hoteles/hotel.component';
+import { HorariosComponent } from './configuracion/horarios/horarios.component';
+import { HorarioComponent } from './configuracion/horarios/horario.component';
 
 
 @NgModule({
