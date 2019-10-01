@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/clientes']" class="btn btn-warning">
+                        <i class="fa fa-arrow-left"></i>
+                        Volver
+                    </button>
+                </div>
+                <form ngNativeValidate class="row" #formCliente="ngForm" (ngSubmit)="saveCliente(formCliente)">
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Pais</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-clock"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="cliente.pais" name="pais" type="text" required class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Direccion</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="cliente.direccion" name="direccion" type="text" required
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Telefono</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="cliente.telefono" name="telefono" type="text" required
+                                    class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Correo</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="cliente.correo" name="correo" type="text" required
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <label class="control-label">Estado</label>
+                        <div class="demo-radio-button">
+
+                            <input [(ngModel)]="cliente.estado" name="estado" type="radio" id="radio_1" value="true"
+                                class="radio-col-light-green" required>
+
+                            <label for="radio_1">activo</label>
+                            <input [(ngModel)]="!cliente.estado" name="estado" type="radio" id="radio_2" value="false"
+                                class="radio-col-red" required>
+                            <label for="radio_2">desactivado</label>
+                        </div>
+                    </div>
+
+
+                    <div class="col text-right">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

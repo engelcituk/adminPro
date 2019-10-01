@@ -34,6 +34,24 @@ export class SidebarService {
       ]
     },
     {
+      titulo: 'Administración',
+      icono: 'mdi mdi-view-list',
+      submenu: [
+        {
+          titulo: 'Agencias', url: '/agencias'
+        },
+        {
+          titulo: 'Paquetes', url: '/paquetes'
+        },
+        {
+          titulo: 'Clientes', url: '/clientes'
+        },
+        {
+          titulo: 'Usuarios', url: '/usuarios'
+        }
+      ]
+    },
+    {
       titulo: 'Configuración',
       icono: 'mdi mdi-settings',
       submenu: [

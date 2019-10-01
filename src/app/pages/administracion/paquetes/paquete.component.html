@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/paquetes']" class="btn btn-warning">
+                        <i class="fa fa-arrow-left"></i>
+                        Volver
+                    </button>
+                </div>
+                <form ngNativeValidate class="row" #formPaquete="ngForm" (ngSubmit)="savePaquete(formPaquete)">
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Nombre</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-clock"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="paquete.name" name="name" type="text" required class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Descripción</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-map-marker"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="paquete.direccion" name="direccion" type="text" required
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Telefono</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="paquete.telefono" name="telefono" type="text" required
+                                    class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Correo</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="paquete.correo" name="correo" type="text" required
+                                    class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">                        
+                        <label class="control-label">Estado</label>
+                            <div class="demo-radio-button">
+
+                            <input [(ngModel)]="paquete.status" name="status" type="radio" id="radio_1" value="true" class="radio-col-light-green" required>
+                        
+                            <label for="radio_1">activo</label>
+                            <input [(ngModel)]="!paquete.status" name="status" type="radio" id="radio_2" value="false" class="radio-col-red" required>
+                            <label for="radio_2">desactivado</label>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col text-right">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

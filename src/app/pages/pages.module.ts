@@ -26,6 +26,14 @@ import { HotelesComponent } from './configuracion/hoteles/hoteles.component';
 import { HotelComponent } from './configuracion/hoteles/hotel.component';
 import { HorariosComponent } from './configuracion/horarios/horarios.component';
 import { HorarioComponent } from './configuracion/horarios/horario.component';
+import { ClientesComponent } from './administracion/clientes/clientes.component';
+import { ClienteComponent } from './administracion/clientes/cliente.component';
+import { UsuariosComponent } from './administracion/usuarios/usuarios.component';
+import { UsuarioComponent } from './administracion/usuarios/usuario.component';
+import { PaquetesComponent } from './administracion/paquetes/paquetes.component';
+import { PaqueteComponent } from './administracion/paquetes/paquete.component';
+import { AgenciaComponent } from './administracion/agencias/agencia.component';
+import { AgenciasComponent } from './administracion/agencias/agencias.component';
 
 
 @NgModule({
@@ -44,7 +52,15 @@ import { HorarioComponent } from './configuracion/horarios/horario.component';
       HotelesComponent,
       HotelComponent,
       HorariosComponent,
-      HorarioComponent
+      HorarioComponent,
+      ClientesComponent,
+      ClienteComponent,
+      UsuariosComponent,
+      UsuarioComponent,
+      PaquetesComponent,
+      PaqueteComponent,
+      AgenciaComponent,
+      AgenciasComponent
     ],
   exports: [
       DashboardComponent,
