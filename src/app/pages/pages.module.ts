@@ -34,6 +34,10 @@ import { PaquetesComponent } from './administracion/paquetes/paquetes.component'
 import { PaqueteComponent } from './administracion/paquetes/paquete.component';
 import { AgenciaComponent } from './administracion/agencias/agencia.component';
 import { AgenciasComponent } from './administracion/agencias/agencias.component';
+import { EstadosComponent } from './configuracion/estados/estados.component';
+import { EstadoComponent } from './configuracion/estados/estado.component';
+import { LugaresComponent } from './administracion/lugares/lugares.component';
+import { LugarComponent } from './administracion/lugares/lugar.component';
 
 
 @NgModule({
@@ -60,7 +64,11 @@ import { AgenciasComponent } from './administracion/agencias/agencias.component'
       PaquetesComponent,
       PaqueteComponent,
       AgenciaComponent,
-      AgenciasComponent
+      AgenciasComponent,
+      EstadosComponent,
+      EstadoComponent,
+      LugaresComponent,
+      LugarComponent
     ],
   exports: [
       DashboardComponent,

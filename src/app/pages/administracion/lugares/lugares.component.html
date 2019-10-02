@@ -1,0 +1,91 @@
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/lugar','nuevo']" routerLinkActive="router-link-active"
+                        class="btn btn-primary">
+                        <i class="fa fa-plus"></i>
+                        Agregar
+                    </button>
+                </div>
+                <br>
+                <div class="form-group m-b-0">
+                    <div class="input-group">
+                        <span class="input-group-addon input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-hotel"></i>
+                            </span>
+                        </span>
+
+                        <input #input type="text" (keyup)="buscarLugar( input.value )" class="form-control"
+                            placeholder="Buscar lugar">
+
+                        <span class="input-group-addon input-group-append">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeIn" *ngIf="cargando">
+    <div class="col-12">
+        <div class="alert alert-danger text-center">
+            <strong>Cargando</strong>
+            <br>
+
+            <i class="fas fa-sync fa-spin fa-2x"></i>
+            <br>
+            <span>Espere por favor</span>
+        </div>
+    </div>
+</div>
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">lugares registrados: <span class="badge badge-success">{{totalRegistros}}</span>
+                </h3>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre</th>
+                            <th>Código</th>
+                            <th>Empresa</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let lugar of lugares ; let i = index">
+                            <td>{{i+1}}</td>
+                            <td>{{lugar.name}}</td>
+                            <td>{{lugar.codigo}}</td>
+                            <td>{{lugar.empresa}}</td>
+                            <td>
+                                <button class="btn btn-primary" [routerLink]="['/lugar',lugar.id]">
+                                    <i class="fas fa-edit"></i>
+                                </button> &nbsp;
+
+                                <button class="btn btn-danger" (click)="borrarlugar(lugar, i)">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <button (click)="cambiarDesde(-5)" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Anteriores
+                </button> -
+                <button (click)="cambiarDesde(5)" class="btn btn-secondary">
+                    Siguientes <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

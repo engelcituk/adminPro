@@ -1,0 +1,38 @@
+<div class="row animated fadeIn">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/estados']" class="btn btn-warning">
+                        <i class="fa fa-arrow-left"></i>
+                        Volver
+                    </button>
+                </div>
+                <form ngNativeValidate class="row" #formEstado="ngForm" (ngSubmit)="saveEstado(formEstado)">
+                    <div class="col-12">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Estado</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-hotel"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="estado.estado" name="estado" type="text" required class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="col text-right">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

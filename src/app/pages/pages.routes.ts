@@ -25,6 +25,10 @@ import { HotelesComponent } from './configuracion/hoteles/hoteles.component';
 import { HotelComponent } from './configuracion/hoteles/hotel.component';
 import { HorariosComponent } from './configuracion/horarios/horarios.component';
 import { HorarioComponent } from './configuracion/horarios/horario.component';
+import { EstadoComponent } from './configuracion/estados/estado.component';
+import { EstadosComponent } from './configuracion/estados/estados.component';
+import { LugarComponent } from './administracion/lugares/lugar.component';
+import { LugaresComponent } from './administracion/lugares/lugares.component';
 
 
 const pageRoutes: Routes = [
@@ -45,6 +49,8 @@ const pageRoutes: Routes = [
       { path: 'agencia/:id', component: AgenciaComponent, data: { titulo: 'Crear/actualizar agencia' } },
       { path: 'paquetes', component: PaquetesComponent, data: { titulo: 'Paquetes' } },
       { path: 'paquete/:id', component: PaqueteComponent, data: { titulo: 'Crear/actualizar paquete' } },
+      { path: 'lugares', component: LugaresComponent, data: { titulo: 'Lugares' } },
+      { path: 'lugar/:id', component: LugarComponent, data: { titulo: 'Crear/actualizar lugar' } },
       { path: 'clientes', component: ClientesComponent, data: { titulo: 'Clientes' } },
       { path: 'cliente/:id', component: ClienteComponent, data: { titulo: 'Crear/actualizar cliente' } },
       { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' } },
@@ -55,6 +61,8 @@ const pageRoutes: Routes = [
       { path: 'hotel/:id', component: HotelComponent, data: { titulo: 'Crear/actualizar hotel'} },
       { path: 'horarios', component: HorariosComponent, data: { titulo: 'Horarios' } },
       { path: 'horario/:id', component: HorarioComponent, data: { titulo: 'Crear/actualizar horario' } },
+      { path: 'estados', component: EstadosComponent, data: { titulo: 'Estados' } },
+      { path: 'estado/:id', component: EstadoComponent, data: { titulo: 'Crear/actualizar estado' } },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
     ]
   }

@@ -9,6 +9,7 @@ import {
   SidebarService,
   HotelService,
   HorarioService,
+  EventoService,
 } from './service.index';
 
 
@@ -23,7 +24,8 @@ import {
     SharedService,
     SidebarService,
     HotelService,
-    HorarioService
+    HorarioService,
+    EventoService
   ]
 })
 export class ServicesModule { }

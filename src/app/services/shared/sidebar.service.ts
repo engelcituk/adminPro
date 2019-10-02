@@ -44,6 +44,9 @@ export class SidebarService {
           titulo: 'Paquetes', url: '/paquetes'
         },
         {
+          titulo: 'Lugares', url: '/lugares'
+        },
+        {
           titulo: 'Clientes', url: '/clientes'
         },
         {
@@ -60,6 +63,9 @@ export class SidebarService {
         },
         {
           titulo: 'Horarios', url: '/horarios'
+        },
+        {
+          titulo: 'Estados', url: '/estados'
         }
       ]
     }
