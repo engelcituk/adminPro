@@ -54,9 +54,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Hora</th>
-                            <th>idHotel</th>
-
+                            <th>Email</th>
+                            <th>Telefono</th>
+                            <th>Dirección</th>
+                            <th>País</th>
+                            <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -64,6 +66,8 @@
                         <tr *ngFor="let horario of horarios ; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{horario.hora}}</td>
+                            <td>{{horario.idHotel}}</td>
+                            <td>{{horario.idHotel}}</td>
                             <td>{{horario.idHotel}}</td>
                             <td>
                                 <button class="btn btn-primary" [routerLink]="['/horario',horario.id]">

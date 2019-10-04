@@ -48,7 +48,13 @@ export class AgendaComponent implements OnInit {
         navLinks: true,
         editable: true,
         eventLimit: true,
-        events: 'https://api.myjson.com/bins/1g3mht',  // request to load current events
+        events: [{
+          title: 'My repeating event',
+          color: '#5bc0de',
+          start: '10:00', // a start time (10am in this example)
+          end: '11:00', // an end time (2pm in this example)
+          dow: [0, 1, 2, 3, 4, 5, 6, 7] // Repeat monday and thursday
+        }],  // request to load current events
 
         dayClick: (date) => {
           this.fecha = date.format();
