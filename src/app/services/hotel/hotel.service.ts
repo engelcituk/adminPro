@@ -40,7 +40,7 @@ export class HotelService {
 
   getHoteles(desde: number = 0) {
 
-    const url = 'Hoteles/getAll';
+    const url = 'hotel';
 
     return this.http.get(url);
 
