@@ -5,7 +5,7 @@ export class Hotel {
         public codigo: string,
         public empresa: string,
         public cHorarios?: [],
-        public id?: number,
+        public _id?: string,
     ) {
 
     }

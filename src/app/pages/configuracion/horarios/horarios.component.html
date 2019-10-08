@@ -55,8 +55,7 @@
                         <tr>
                             <th>#</th>
                             <th>Hora</th>
-                            <th>idHotel</th>
-                            
+                            <th>Hotel</th>                            
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -64,13 +63,13 @@
                         <tr *ngFor="let horario of horarios ; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{horario.hora}}</td>
-                            <td>{{horario.idHotel}}</td>                            
+                            <td>{{horario.hotel.name}}</td>                            
                             <td>
-                                <button class="btn btn-primary" [routerLink]="['/horario',horario.id]">
+                                <button class="btn btn-primary" [routerLink]="['/horario',horario._id]">
                                     <i class="fas fa-edit"></i>
                                 </button> &nbsp;
 
-                                <button class="btn btn-danger" (click)="borrarHorario(hotel, i)">
+                                <button class="btn btn-danger" (click)="borrarHorario(horario, i)">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

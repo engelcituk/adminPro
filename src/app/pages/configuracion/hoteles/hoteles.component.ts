@@ -28,11 +28,12 @@ export class HotelesComponent implements OnInit {
 
     this.cargando = true;
 
-    this.hotelService.getHoteles().subscribe( ( respuesta: any )  => {
-
-      this.hoteles = respuesta.hoteles;
-      this.totalRegistros = respuesta.total;
-      this.cargando = false;
+    this.hotelService.getHoteles( this.desde)
+      .subscribe( ( respuesta: any )  => {
+        // console.log(respuesta.hoteles);
+        this.hoteles = respuesta.hoteles;
+        this.totalRegistros = respuesta.total;
+        this.cargando = false;
 
     });
   }
@@ -49,9 +50,9 @@ export class HotelesComponent implements OnInit {
     }
 
     this.desde += valor;
-    console.log(desde);
     this.getHoteles();
   }
+
   buscarHotel(termino: string) {
     console.log(termino);
   }
@@ -69,10 +70,14 @@ export class HotelesComponent implements OnInit {
       if (borrar.value) {
         this.hoteles.splice(indice, 1);
 
-        this.hotelService.deleteHotel(hotel.id).subscribe();
+        this.hotelService.deleteHotel(hotel._id)
+        .subscribe( borrado => {
+            console.log(borrado);
+            this.getHoteles();
+           }
+        );
       }
     });
-
   }
 
 }

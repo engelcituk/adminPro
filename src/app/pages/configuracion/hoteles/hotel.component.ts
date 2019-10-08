@@ -19,7 +19,6 @@ export class HotelComponent implements OnInit {
   constructor(public hotelService: HotelService,
               public router: Router,
               public rutaActivada: ActivatedRoute
-
     ) {
 
   }
@@ -33,7 +32,8 @@ export class HotelComponent implements OnInit {
           this.hotel = respuesta;
         });
     }
-}
+  }
+
   saveHotel(formHotel: NgForm) {
     // console.log(formHotel.valid);
     // console.log(formHotel.value);
@@ -41,61 +41,18 @@ export class HotelComponent implements OnInit {
       return;
     }
     this.hotelService.saveHotel(this.hotel).subscribe( hotel => {
-      this.hotel.id = hotel.id;
-      this.router.navigate(['/hotel', this.hotel.id]);
+      this.hotel._id = hotel._id;
+      this.router.navigate(['/hotel', this.hotel._id]);
     });
+  }
 
-}
-getHotel(id: number) {
-  this.hotelService.getHotel(id)
-  .subscribe( hotel => {
-      this.hotel = hotel;
-      console.log(this.hotel);
+  getHotel(id: string) {
+    this.hotelService.getHotel(id)
+    .subscribe( hotel => {
+        this.hotel = hotel;
+        console.log(this.hotel);
 
-    }
-  );
-}
-  // para registrar el usuario
-  // guardarHotel() {
-
-  //   if (this.formHotel.invalid) {
-  //     Swal.fire({
-  //       type: 'error',
-  //       title: 'Oops...',
-  //       text: 'Datos no validos'
-  //     });
-  //     return;
-  //   }
-
-  //   const hotel = new Hotel(
-  //     this.formHotel.value.name,
-  //     this.formHotel.value.codigo,
-  //     this.formHotel.value.empresa
-
-  //   );
-
-  //   // console.log(this.formHotel.value);
-  //   Swal.fire({
-  //     title: 'Espere',
-  //     text: 'Guardando información',
-  //     type: 'info',
-  //     allowOutsideClick: true
-  //   });
-  //   Swal.showLoading();
-
-  //   this.hotelService.crearHotel(hotel)
-  //     .subscribe(respuesta => {
-  //       // console.log(respuesta);
-  //       Swal.fire({
-  //         title: hotel.name,
-  //         text: 'Se guardó correctamente',
-  //         type: 'success'
-  //       });
-  //       this.router.navigateByUrl('/hoteles');
-  //     });
-  // }
-
-  actualizarHotel() {
-
+      }
+    );
   }
 }

@@ -32,9 +32,9 @@
                                         <i class="fas fa-hotel"></i>
                                     </span>
                                 </span>
-                                <select [(ngModel)]="horario.idHotel" name="idHotel" class="form-control custom-select" required>
+                                <select [(ngModel)]="horario.hotel" name="hotel" class="form-control custom-select" required>
                                     <option value="">Seleccione hotel</option>
-                                    <option *ngFor="let hotel of hoteles" [value]="hotel.id">{{hotel.name}}</option>                                                        
+                                    <option *ngFor="let hotel of hoteles" [value]="hotel._id">{{hotel.name}}</option>                                                        
                                 </select>
                             </div>
                         </div>

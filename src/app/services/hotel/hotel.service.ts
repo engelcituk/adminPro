@@ -17,9 +17,9 @@ export class HotelService {
   // funcion tanto para guardar POST y actualizar (PUT)
   saveHotel(hotel: Hotel) {
 
-    const url = 'Hoteles/add';
+    const url = 'hotel';
 
-    if (hotel.id) {
+    if (hotel._id) {
       // actualizo el dato
       return this.http.post(url, hotel).pipe(
         map((respuesta: any) => {
@@ -40,21 +40,27 @@ export class HotelService {
 
   getHoteles(desde: number = 0) {
 
-    const url = 'hotel';
-
+    const url = 'hotel?desde=' + desde;
     return this.http.get(url);
 
   }
 
-  getHotel(id: number) {
-    const url = 'Hoteles/';
+  getHotel(id: string) {
+    const url = 'hotel/';
     return this.http.get(url + id).pipe(
-      map( (respuesta: any ) => respuesta.hoteles));
+      map( (respuesta: any ) => respuesta.hotel));
   }
 
-  deleteHotel(id: number) {
-    const url = 'Hoteles/';
-    return this.http.delete(url + id);
+  deleteHotel(id: string) {
+
+    const url = 'hotel/';
+    return this.http.delete(url + id).pipe(
+      map( ( respuesta => {
+        Swal.fire('Hotel borrado', 'El hotel a sido eliminado correctamente', 'success');
+        return true;
+      }))
+    );
 
   }
+
 }
