@@ -20,6 +20,9 @@ import { ClientesComponent } from './administracion/clientes/clientes.component'
 import { UsuarioComponent } from './administracion/usuarios/usuario.component';
 import { UsuariosComponent } from './administracion/usuarios/usuarios.component';
 
+// para el buscador
+import { BusquedaComponent } from './busqueda/busqueda.component';
+
 // COmponentes configuración
 import { HotelesComponent } from './configuracion/hoteles/hoteles.component';
 import { HotelComponent } from './configuracion/hoteles/hotel.component';
@@ -55,6 +58,9 @@ const pageRoutes: Routes = [
       { path: 'cliente/:id', component: ClienteComponent, data: { titulo: 'Crear/actualizar cliente' } },
       { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' } },
       { path: 'usuario/:id', component: UsuarioComponent, data: { titulo: 'Crear/actualizar usuarios' } },
+      // para el buscador
+      { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador' } },
+
 
       // area de configuracion
       { path: 'hoteles', component: HotelesComponent, data: { titulo: 'Hoteles' }  },

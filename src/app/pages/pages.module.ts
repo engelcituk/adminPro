@@ -38,6 +38,7 @@ import { EstadosComponent } from './configuracion/estados/estados.component';
 import { EstadoComponent } from './configuracion/estados/estado.component';
 import { LugaresComponent } from './administracion/lugares/lugares.component';
 import { LugarComponent } from './administracion/lugares/lugar.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { LugarComponent } from './administracion/lugares/lugar.component';
       EstadosComponent,
       EstadoComponent,
       LugaresComponent,
-      LugarComponent
+      LugarComponent,
+      BusquedaComponent
     ],
   exports: [
       DashboardComponent,

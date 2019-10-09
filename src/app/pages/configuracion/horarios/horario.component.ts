@@ -42,8 +42,8 @@ export class HorarioComponent implements OnInit {
   }
 
   saveHorario(formHorario: NgForm) {
-    console.log(formHorario.valid);
-    console.log(formHorario.value);
+    // console.log(formHorario.valid);
+    // console.log(formHorario.value);
     if (formHorario.invalid) {
       return;
     }
@@ -60,7 +60,7 @@ export class HorarioComponent implements OnInit {
         this.horario = horario;
         // this.horario.hotel = horario.hotel;
 
-        console.log(this.horario);
+        // console.log(this.horario);
       });
 
   }
