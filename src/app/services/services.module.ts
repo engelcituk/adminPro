@@ -10,6 +10,7 @@ import {
   HotelService,
   HorarioService,
   EventoService,
+  EstadoService,
 } from './service.index';
 
 
@@ -25,7 +26,8 @@ import {
     SidebarService,
     HotelService,
     HorarioService,
-    EventoService
+    EventoService,
+    EstadoService,
   ]
 })
 export class ServicesModule { }

@@ -25,7 +25,7 @@ export class HorarioService {
       // actualizo el horario
       return this.http.post(url, horario).pipe(
         map((respuesta: any) => {
-          Swal.fire('Hotel actualizado', horario.hora, 'success');
+          Swal.fire('Horario actualizado', horario.hora, 'success');
           return respuesta.horario;
         }));
 
@@ -33,7 +33,7 @@ export class HorarioService {
       // creo el horario
       return this.http.post(url, horario).pipe(
         map((respuesta: any) => {
-          Swal.fire('Hotel creado', horario.hora, 'success');
+          Swal.fire('Horario creado', horario.hora, 'success');
           return respuesta.horario;
         }));
     }
@@ -60,10 +60,19 @@ export class HorarioService {
     const url = 'horario/';
     return this.http.delete(url + id).pipe(
       map((respuesta => {
-        Swal.fire('Horario borrado', 'El horario a sido eliminado correctamente', 'success');
+        Swal.fire('Horario borrado', 'El horario ha sido eliminado correctamente', 'success');
         return true;
       }))
     );
+  }
+
+  buscarHorario(termino: string) {
+    const url = 'busqueda/coleccion/horarios/' + termino;
+
+    return this.http.get(url)
+      .pipe(
+        map((respuesta: any) => respuesta.horarios)
+      );
   }
 
 }

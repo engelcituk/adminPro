@@ -2,7 +2,7 @@ export class Estado {
 
     constructor(
         public estado: string,
-        public id?: number,
+        public _id?: string,
     ) {
 
     }

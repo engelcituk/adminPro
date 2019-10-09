@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HorarioService } from 'src/app/services/service.index';
+import { HorarioService } from '../../../services/service.index';
 import { Horario } from './../../../models/horario.model';
 import Swal from 'sweetalert2';
 
@@ -73,5 +73,22 @@ export class HorariosComponent implements OnInit {
       }
 
     });
+  }
+
+  buscarHorario(termino: string) {
+
+    if (termino.length <= 0) {
+      this.getHorarios();
+      return;
+    }
+
+    this.cargando = true;
+
+    this.horarioService.buscarHorario(termino).subscribe((horarios: Horario[]) => {
+      this.horarios = horarios;
+      this.cargando = false;
+
+    });
+
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HotelService } from 'src/app/services/service.index';
+import { HotelService } from '../../../services/service.index';
 import { Hotel } from '../../../models/hotel.model';
 
 import Swal from 'sweetalert2';
@@ -37,7 +37,7 @@ export class HotelesComponent implements OnInit {
 
     });
   }
-
+  // para el funcionamiento de los botones de paginado
   cambiarDesde(valor: number) {
 
     const desde = this.desde + valor;
@@ -54,7 +54,20 @@ export class HotelesComponent implements OnInit {
   }
 
   buscarHotel(termino: string) {
-    console.log(termino);
+
+    if (termino.length <= 0) {
+      this.getHoteles();
+      return;
+    }
+
+    this.cargando = true;
+
+    this.hotelService.buscarHotel(termino).subscribe( (hoteles: Hotel[]) => {
+      this.hoteles = hoteles;
+      this.cargando = false;
+
+    });
+
   }
 
   borrarHotel(hotel: Hotel, indice: number) {

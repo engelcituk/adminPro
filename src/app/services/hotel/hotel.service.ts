@@ -63,4 +63,13 @@ export class HotelService {
 
   }
 
+  buscarHotel(termino: string) {
+    const url = 'busqueda/coleccion/hoteles/' + termino;
+
+    return this.http.get(url)
+      .pipe(
+        map( (respuesta: any) => respuesta.hoteles)
+      );
+  }
+
 }
