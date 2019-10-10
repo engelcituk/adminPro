@@ -1,1 +1,62 @@
-<p>busqueda works!</p>
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hoteles</h4>
+                <table class="table table-hover" *ngIf="hoteles.length > 0">
+                    <tbody>
+                        <tr *ngFor="let hotel of hoteles ; let i = index" [routerLink]="['/hoteles']" style="cursor:pointer;">
+                            <td>{{i+1}}</td>
+                            <td>{{hotel.name}}</td>
+                            <td>{{hotel.codigo}}</td>
+                            <td>{{hotel.empresa}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-warning" *ngIf="hoteles.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Horarios</h4>
+                <table class="table table-hover" *ngIf="horarios.length > 0">
+                    <tbody>
+                        <tr *ngFor="let horario of horarios ; let i = index" [routerLink]="['/horarios']" style="cursor:pointer;">
+                            <td>{{i+1}}</td>
+                            <td>{{horario.hora}}</td>
+                            <td>{{horario.hotel.name}}</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+                <div class="alert alert-warning" *ngIf="horarios.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Estados</h4>
+                <table class="table table-hover" *ngIf="estados.length > 0">
+                    <tbody>
+                        <tr *ngFor="let estado of estados ; let i = index" [routerLink]="['/estados']" style="cursor:pointer;">
+                            <td>{{i+1}}</td>
+                            <td>{{estado.estado}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-warning" *ngIf="estados.length === 0">
+                    No hay registros
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
