@@ -11,6 +11,8 @@ import {
   HorarioService,
   EventoService,
   EstadoService,
+  UsuarioService,
+  ClienteService
 } from './service.index';
 
 
@@ -28,6 +30,8 @@ import {
     HorarioService,
     EventoService,
     EstadoService,
+    UsuarioService,
+    ClienteService
   ]
 })
 export class ServicesModule { }

@@ -5,10 +5,9 @@ export class Usuario {
         public usuario: string,
         public password: string,
         public fechaAlta: string,
-        public tipoUsuario: string,
+        public role: string,
         public status: boolean,
-        public id?: number,
-        public idRol?: number,
+        public _id?: string,
 
     ) {
 

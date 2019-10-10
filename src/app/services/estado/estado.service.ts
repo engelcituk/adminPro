@@ -19,11 +19,12 @@ export class EstadoService {
   // funcion tanto para guardar POST y actualizar (PUT)
   saveEstado(estado: Estado) {
 
-    const url = 'estado';
+    let url = 'estado';
 
     if (estado._id) {
       // actualizo el estado
-      return this.http.post(url, estado).pipe(
+      url += '/' + estado._id;
+      return this.http.put(url, estado).pipe(
         map((respuesta: any) => {
           Swal.fire('Estado actualizado', estado.estado, 'success');
           return respuesta.estado;

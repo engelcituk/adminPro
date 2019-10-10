@@ -17,11 +17,12 @@ export class HotelService {
   // funcion tanto para guardar POST y actualizar (PUT)
   saveHotel(hotel: Hotel) {
 
-    const url = 'hotel';
+    let url = 'hotel';
 
     if (hotel._id) {
       // actualizo el dato
-      return this.http.post(url, hotel).pipe(
+      url += '/' + hotel._id;
+      return this.http.put(url, hotel).pipe(
         map((respuesta: any) => {
           Swal.fire('Hotel actualizado', hotel.name, 'success');
           return respuesta.hotel;

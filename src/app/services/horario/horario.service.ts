@@ -19,11 +19,12 @@ export class HorarioService {
   // funcion tanto para guardar POST y actualizar (PUT)
   saveHorario(horario: Horario) {
 
-    const url = 'horario';
+    let url = 'horario';
 
     if (horario._id) {
       // actualizo el horario
-      return this.http.post(url, horario).pipe(
+      url += '/' + horario._id;
+      return this.http.put(url, horario).pipe(
         map((respuesta: any) => {
           Swal.fire('Horario actualizado', horario.hora, 'success');
           return respuesta.horario;

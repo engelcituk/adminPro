@@ -4,6 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Hotel } from '../../models/hotel.model';
 import { Horario } from '../../models/horario.model';
 import { Estado } from '../../models/estado.model';
+import { Usuario } from '../../models/usuario.model';
+import { Cliente } from '../../models/cliente.model';
+
+
 
 
 @Component({
@@ -13,9 +17,13 @@ import { Estado } from '../../models/estado.model';
 })
 export class BusquedaComponent implements OnInit {
 
-  hoteles : Hotel[] = [];
-  horarios : Horario[] = [];
-  estados : Estado[] = [];
+  hoteles: Hotel[] = [];
+  horarios: Horario[] = [];
+  estados: Estado[] = [];
+  usuarios: Usuario[] = [];
+  clientes: Cliente[] = [];
+
+
 
 
   constructor(
@@ -35,10 +43,12 @@ export class BusquedaComponent implements OnInit {
 
     const url = 'busqueda/todo/' + termino;
     this.http.get(url).subscribe( (respuesta: any) => {
-      //console.log(respuesta);
+      // console.log(respuesta);
       this.hoteles = respuesta.hoteles;
       this.horarios = respuesta.horarios;
       this.estados = respuesta.estados;
+      this.usuarios = respuesta.usuarios;
+      this.clientes = respuesta.clientes;
 
     });
 

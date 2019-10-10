@@ -6,7 +6,7 @@ export class Cliente {
         public direccion: string,
         public estado: boolean,
         public pais: string,
-        public id?: number,
+        public _id?: string,
     ) {
 
     }

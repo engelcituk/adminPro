@@ -37,7 +37,7 @@ export class HotelesComponent implements OnInit {
 
     });
   }
-  // para el funcionamiento de los botones de paginado
+  // para el funcionamiento de los botones de paginado <- anterioes-siguientes->
   cambiarDesde(valor: number) {
 
     const desde = this.desde + valor;

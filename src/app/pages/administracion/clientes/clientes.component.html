@@ -1,37 +1,3 @@
-<div class="row animated fadeIn">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="col text-right">
-                    <button [routerLink]="['/cliente','nuevo']" routerLinkActive="router-link-active"
-                        class="btn btn-primary">
-                        <i class="fa fa-plus"></i>
-                        Agregar
-                    </button>
-                </div>
-                <br>
-                <div class="form-group m-b-0">
-                    <div class="input-group">
-                        <span class="input-group-addon input-group-prepend">
-                            <span class="input-group-text">
-                                <i class="fas fa-clock"></i>
-                            </span>
-                        </span>
-
-                        <input #input type="text" (keyup)="buscarCliente( input.value )" class="form-control"
-                            placeholder="Buscar cliente">
-
-                        <span class="input-group-addon input-group-append">
-                            <span class="input-group-text">
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="row animated fadeIn" *ngIf="cargando">
     <div class="col-12">
         <div class="alert alert-danger text-center">
@@ -48,6 +14,32 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/cliente','nuevo']" routerLinkActive="router-link-active" class="btn btn-primary">
+                        <i class="fa fa-plus"></i>
+                        Agregar
+                    </button>
+                </div>
+                <br>
+                <div class="form-group m-b-0">
+                    <div class="input-group">
+                        <span class="input-group-addon input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="fas fa-clock"></i>
+                            </span>
+                        </span>
+                
+                        <input #input type="text" (keyup)="buscarCliente( input.value )" class="form-control"
+                            placeholder="Buscar cliente">
+                
+                        <span class="input-group-addon input-group-append">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <br>
                 <h3 class="card-title">Clientes registrados: <span class="badge badge-success">{{totalRegistros}}</span>
                 </h3>
                 <table class="table table-hover">
@@ -63,18 +55,24 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let horario of horarios ; let i = index">
+                        <tr *ngFor="let cliente of clientes ; let i = index">
                             <td>{{i+1}}</td>
-                            <td>{{horario.hora}}</td>
-                            <td>{{horario.idHotel}}</td>
-                            <td>{{horario.idHotel}}</td>
-                            <td>{{horario.idHotel}}</td>
+                            <td>{{cliente.email}}</td>
+                            <td>{{cliente.telefono}}</td>
+                            <td>{{cliente.pais}}</td>
+                            <td>{{cliente.pais}}</td>
+                            <td *ngIf="cliente.estado">
+                                <span class="badge badge-success">activo</span>
+                            </td>
+                            <td *ngIf="!cliente.estado">
+                                <span class="badge badge-danger">desactivado</span>
+                            </td>
                             <td>
-                                <button class="btn btn-primary" [routerLink]="['/horario',horario.id]">
+                                <button class="btn btn-primary" [routerLink]="['/cliente',cliente._id]">
                                     <i class="fas fa-edit"></i>
                                 </button> &nbsp;
 
-                                <button class="btn btn-danger" (click)="borrarHorario(hotel, i)">
+                                <button class="btn btn-danger" (click)="borrarCliente(cliente, i)">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

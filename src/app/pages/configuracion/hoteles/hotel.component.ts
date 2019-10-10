@@ -46,13 +46,4 @@ export class HotelComponent implements OnInit {
     });
   }
 
-  getHotel(id: string) {
-    this.hotelService.getHotel(id)
-    .subscribe( hotel => {
-        this.hotel = hotel;
-        console.log(this.hotel);
-
-      }
-    );
-  }
 }
