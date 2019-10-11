@@ -5,7 +5,7 @@ export class Agencia {
         public direccion: string,
         public telefono: string,
         public correo: string,
-        public id?: number,
+        public _id?: string,
     ) {
 
     }

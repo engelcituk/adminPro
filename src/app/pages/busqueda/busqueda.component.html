@@ -1,12 +1,11 @@
 <div class="row">
-    <div class="col-4">
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> <i class="fas fa-hotel"></i> Hoteles</h4>
                 <table class="table table-hover" *ngIf="hoteles.length > 0">
                     <tbody>
                         <tr *ngFor="let hotel of hoteles ; let i = index" [routerLink]="['/hoteles']" style="cursor:pointer;">
-                            <td>{{i+1}}</td>
                             <td>{{hotel.name}}</td>
                             <td>{{hotel.codigo}}</td>
                             <td>{{hotel.empresa}}</td>
@@ -20,14 +19,13 @@
         </div>
     </div>
 
-    <div class="col-4">
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> <i class="fas fa-clock"></i> Horarios</h4>
                 <table class="table table-hover" *ngIf="horarios.length > 0">
                     <tbody>
                         <tr *ngFor="let horario of horarios ; let i = index" [routerLink]="['/horarios']" style="cursor:pointer;">
-                            <td>{{i+1}}</td>
                             <td>{{horario.hora}}</td>
                             <td>{{horario.hotel.name}}</td>
                         </tr>
@@ -41,14 +39,13 @@
         </div>
     </div>
 
-    <div class="col-4">
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> <i class="fas fa-toggle-on"></i> Estados</h4>
                 <table class="table table-hover" *ngIf="estados.length > 0">
                     <tbody>
                         <tr *ngFor="let estado of estados ; let i = index" [routerLink]="['/estados']" style="cursor:pointer;">
-                            <td>{{i+1}}</td>
                             <td>{{estado.estado}}</td>
                         </tr>
                     </tbody>
@@ -59,15 +56,13 @@
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title"> <i class="fas fa-user-circle"></i> Usuarios</h4>
                 <table class="table table-hover" *ngIf="usuarios.length > 0">
                     <tbody>
-                        <tr *ngFor="let usuario of usuarios ; let i = index" [routerLink]="['/usuarios']"
-                            style="cursor:pointer;">
-                            <td>{{i+1}}</td>
+                        <tr *ngFor="let usuario of usuarios ; let i = index" [routerLink]="['/usuarios']" style="cursor:pointer;">
                             <td>{{usuario.name}}</td>
                             <td>{{usuario.usuario}}</td>
 
@@ -80,20 +75,36 @@
             </div>
         </div>
     </div>
-    <div class="col-4">
+    <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title"> <i class="fas fa-user-circle"></i> Cliente</h4>
+                <h4 class="card-title"> <i class="fas fa-heart"></i> Cliente</h4>
                 <table class="table table-hover" *ngIf="clientes.length > 0">
                     <tbody>
-                        <tr *ngFor="let cliente of clientes ; let i = index" [routerLink]="['/clientes']"
-                            style="cursor:pointer;">
-                            <td>{{i+1}}</td>
-                            <td>{{cliente.email}}</td>                                
+                        <tr *ngFor="let cliente of clientes ; let i = index" [routerLink]="['/clientes']" style="cursor:pointer;">
+                            <td>{{cliente.email}}</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="alert alert-warning" *ngIf="clientes.length === 0">
+                    No hay registros encontrados
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"> <i class="fas fa-luggage-cart"></i> Agencias</h4>
+                <table class="table table-hover" *ngIf="agencias.length > 0">
+                    <tbody>
+                        <tr *ngFor="let agencia of agencias ; let i = index" [routerLink]="['/agencias']" style="cursor:pointer;">
+                            <td>{{agencia.name}}</td>
+                            <td>{{agencia.telefono}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-warning" *ngIf="agencias.length === 0">
                     No hay registros encontrados
                 </div>
             </div>

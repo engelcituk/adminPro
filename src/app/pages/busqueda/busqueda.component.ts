@@ -6,6 +6,8 @@ import { Horario } from '../../models/horario.model';
 import { Estado } from '../../models/estado.model';
 import { Usuario } from '../../models/usuario.model';
 import { Cliente } from '../../models/cliente.model';
+import { Agencia } from '../../models/agencia.model';
+
 
 
 
@@ -22,9 +24,7 @@ export class BusquedaComponent implements OnInit {
   estados: Estado[] = [];
   usuarios: Usuario[] = [];
   clientes: Cliente[] = [];
-
-
-
+  agencias: Agencia[] = [];
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -49,6 +49,8 @@ export class BusquedaComponent implements OnInit {
       this.estados = respuesta.estados;
       this.usuarios = respuesta.usuarios;
       this.clientes = respuesta.clientes;
+      this.agencias = respuesta.agencias;
+
 
     });
 

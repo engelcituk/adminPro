@@ -4,7 +4,6 @@ import { Usuario } from './../../../models/usuario.model';
 
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
