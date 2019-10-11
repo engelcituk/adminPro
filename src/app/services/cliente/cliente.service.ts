@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Cliente } from '../../models/Cliente.model';
+import { Cliente } from '../../models/cliente.model';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
