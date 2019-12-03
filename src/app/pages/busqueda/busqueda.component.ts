@@ -9,9 +9,6 @@ import { Cliente } from '../../models/cliente.model';
 import { Agencia } from '../../models/agencia.model';
 
 
-
-
-
 @Component({
   selector: 'app-busqueda',
   templateUrl: './busqueda.component.html',
@@ -50,7 +47,6 @@ export class BusquedaComponent implements OnInit {
       this.usuarios = respuesta.usuarios;
       this.clientes = respuesta.clientes;
       this.agencias = respuesta.agencias;
-
 
     });
 

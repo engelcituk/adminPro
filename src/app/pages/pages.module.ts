@@ -40,7 +40,6 @@ import { LugaresComponent } from './administracion/lugares/lugares.component';
 import { LugarComponent } from './administracion/lugares/lugar.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 
-
 @NgModule({
   declarations: [
       PagesComponent,
@@ -70,7 +69,8 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
       EstadoComponent,
       LugaresComponent,
       LugarComponent,
-      BusquedaComponent
+      BusquedaComponent,
+
     ],
   exports: [
       DashboardComponent,
