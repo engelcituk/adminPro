@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UsuarioService } from '../../services/service.index';
-// import { Usuario } from './../../models/usuario.model';
 import { Usuario } from '../../models/usuario.model';
-
-
-
-import Swal from 'sweetalert2';
-
-
 
 declare function initPlugins();
 
@@ -22,7 +16,10 @@ export class RegistrarComponent implements OnInit {
 
   forma: FormGroup; // formulario de tipo reactive forms, par el registro de un usuario
 
-  constructor(public usuarioService: UsuarioService) { }
+  constructor(
+    public usuarioService: UsuarioService,
+    public router: Router
+    ) { }
 
   ngOnInit() {
     initPlugins();
@@ -52,10 +49,8 @@ export class RegistrarComponent implements OnInit {
     );
 
     this.usuarioService.crearUsuario( usuario)
-    .subscribe(respuesta => {
-      console.log(respuesta);
-    });
-
+    // redirijo al login
+    .subscribe(respuesta => this.router.navigate(['/login']));
   }
 
   // funcion para verificar que dos campos tiene los mismos valores

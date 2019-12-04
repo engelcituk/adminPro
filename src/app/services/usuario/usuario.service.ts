@@ -43,10 +43,10 @@ export class UsuarioService {
     }
 
   }
-
+  // para registrar usuario antes de  poder hacer login
   crearUsuario(usuario: Usuario) {
     const url = URL_SERVICIOS + this.url;
-    console.log(usuario);
+
     return this.http.post(url, usuario).pipe(
       map((respuesta: any) => {
         Swal.fire('Usuario creado', usuario.name, 'success');
@@ -54,7 +54,15 @@ export class UsuarioService {
       }));
 
   }
+  // para el login de usuario
+  login(usuario: Usuario, recordar: boolean = false) {
+    const url = URL_SERVICIOS + 'login';
+    return this.http.post(url, usuario).pipe(
+      map((respuesta: any) => {
+        return respuesta;
+      }));
 
+  }
   getUsuarios(desde: number = 0) {
 
     const url = 'usuario?desde=' + desde;
@@ -69,6 +77,8 @@ export class UsuarioService {
     return this.http.get(url + id).pipe(
       map((respuesta: any) => respuesta.usuario));
   }
+
+
   // borrar a un usuario
   deleteUsuario(id: string) {
 
