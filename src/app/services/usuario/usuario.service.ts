@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../../models/usuario.model';
+import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { Usuario } from '../../models/usuario.model';
 import { URL_SERVICIOS } from '../../../app/config/config';
 
 
@@ -16,8 +17,10 @@ export class UsuarioService {
   usuario: Usuario;
   token: string;
 
-  constructor(public http: HttpClient) {
-
+  constructor(
+    public http: HttpClient,
+    public router: Router
+    ) {
     console.log('Servicio de usuarios cargado');
     this.cagarDatosStorage();
 
@@ -88,6 +91,16 @@ export class UsuarioService {
         return true; // se logueó, Sí
       }));
 
+  }
+  // metodo para el logout
+  logout() {
+    this.usuario = null;
+    this.token = '';
+
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
+
+    this.router.navigate(['/login']);
   }
   // guardar en storage los datos del usuario al hacer login
   guardarEnStorageDatosUser(id: string, token: string, usuario: Usuario) {
