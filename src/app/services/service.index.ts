@@ -1,5 +1,7 @@
-// Guard para el login
+// Guard para el login, token
 export { LoginGuard } from './guards/login.guard';
+export { VerificaTokenGuard } from './guards/verifica-token.guard';
+
 // services
 export { SettingsService } from './settings/settings.service';
 export { SharedService } from './shared/shared.service';

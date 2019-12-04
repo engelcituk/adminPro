@@ -32,7 +32,9 @@ import { EstadoComponent } from './configuracion/estados/estado.component';
 import { EstadosComponent } from './configuracion/estados/estados.component';
 import { LugarComponent } from './administracion/lugares/lugar.component';
 import { LugaresComponent } from './administracion/lugares/lugares.component';
-import { LoginGuard } from '../services/service.index';
+import { LoginGuard, VerificaTokenGuard } from '../services/service.index';
+
+
 
 
 const pageRoutes: Routes = [
@@ -41,7 +43,12 @@ const pageRoutes: Routes = [
     component: PagesComponent,
     canActivate: [LoginGuard],
     children: [
-      { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard'} },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+        canActivate: [VerificaTokenGuard],
+        data: { titulo: 'Dashboard'}
+      },
       { path: 'reportes', component: ReportesComponent,  data: { titulo: 'Reportes'} },
       { path: 'agenda', component: AgendaComponent,  data: { titulo: 'Agenda'} },
       { path: 'progress', component: ProgressComponent, data: { titulo: 'Progress'} },
@@ -62,7 +69,6 @@ const pageRoutes: Routes = [
       { path: 'usuario/:id', component: UsuarioComponent, data: { titulo: 'Crear/actualizar usuarios' } },
       // para el buscador
       { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador' } },
-
 
       // area de configuracion
       { path: 'hoteles', component: HotelesComponent, data: { titulo: 'Hoteles' }  },

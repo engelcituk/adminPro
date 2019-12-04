@@ -1,8 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+// RXJS
 import { map } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+// sweetalert
 import Swal from 'sweetalert2';
+// modelo, configuracion endpoint
 import { Usuario } from '../../models/usuario.model';
 import { URL_SERVICIOS } from '../../../app/config/config';
 
@@ -25,7 +30,26 @@ export class UsuarioService {
     this.cagarDatosStorage();
 
   }
+// para renovar token
+  renuevaToken() {
+    let url = URL_SERVICIOS + 'login/renuevatoken';
+    url += '?token=' + this.token;
 
+    return this.http.get(url)
+    .pipe(
+      map((respuesta: any) => {
+        this.token = respuesta.token;
+        localStorage.setItem('token', this.token);
+
+        return true;
+      }), catchError ( err => {
+         this.router.navigate(['/login']);
+         Swal.fire('Error', 'No se pudo renovar el token', 'error');
+         return throwError(err.message);
+      })
+    );
+  }
+// para ver si usuario tiene su token
   estaLogueado() {
     return( this.token.length > 5 ) ? true : false;
   }

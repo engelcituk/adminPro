@@ -14,7 +14,8 @@ import {
   UsuarioService,
   ClienteService,
   AgenciaService,
-  LoginGuard
+  LoginGuard,
+  VerificaTokenGuard
 } from './service.index';
 
 
@@ -35,7 +36,8 @@ import {
     UsuarioService,
     ClienteService,
     AgenciaService,
-    LoginGuard
+    LoginGuard,
+    VerificaTokenGuard
   ]
 })
 export class ServicesModule { }
