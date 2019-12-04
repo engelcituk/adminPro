@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     initPlugins();
-    this.username = localStorage.getItem('username') || '';
+    this.username = localStorage.getItem('username') || ''; //  si no hay nada en ls, username es vacio
 
   }
 

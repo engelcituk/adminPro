@@ -13,7 +13,8 @@ import {
   EstadoService,
   UsuarioService,
   ClienteService,
-  AgenciaService
+  AgenciaService,
+  LoginGuard
 } from './service.index';
 
 
@@ -33,7 +34,8 @@ import {
     EstadoService,
     UsuarioService,
     ClienteService,
-    AgenciaService
+    AgenciaService,
+    LoginGuard
   ]
 })
 export class ServicesModule { }

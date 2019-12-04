@@ -12,11 +12,29 @@ import { URL_SERVICIOS } from '../../../app/config/config';
 export class UsuarioService {
 
   url: string = 'usuario'; // endpoint
+  // propiedades para verificar que un usuario está logueado
+  usuario: Usuario;
+  token: string;
 
   constructor(public http: HttpClient) {
 
     console.log('Servicio de usuarios cargado');
+    this.cagarDatosStorage();
 
+  }
+
+  estaLogueado() {
+    return( this.token.length > 5 ) ? true : false;
+  }
+  // cargar datos desde el storage
+  cagarDatosStorage() {
+    if(localStorage.getItem('token')) {
+      this.token = localStorage.getItem('token');
+      this.usuario = JSON.parse(localStorage.getItem('usuario'));
+    } else {
+      this.token = '';
+      this.usuario = null;
+    }
   }
 
   // funcion tanto para guardar POST y actualizar (PUT), funcional en el dashboard
@@ -66,14 +84,22 @@ export class UsuarioService {
 
     return this.http.post(url, usuario).pipe(
       map((respuesta: any) => {
-        localStorage.setItem('id', respuesta.id);
-        localStorage.setItem('token', respuesta.token);
-        localStorage.setItem('usuario', JSON.stringify(respuesta.usuario));
-
+        this.guardarEnStorageDatosUser(respuesta.id, respuesta.token, respuesta.usuario);
         return true; // se logueó, Sí
       }));
 
   }
+  // guardar en storage los datos del usuario al hacer login
+  guardarEnStorageDatosUser(id: string, token: string, usuario: Usuario) {
+    localStorage.setItem('id', id);
+    localStorage.setItem('token', token);
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+
+    this.usuario = usuario;
+    this.token = token;
+
+  }
+
   getUsuarios(desde: number = 0) {
 
     const url = 'usuario?desde=' + desde;

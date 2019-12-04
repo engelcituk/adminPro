@@ -32,12 +32,14 @@ import { EstadoComponent } from './configuracion/estados/estado.component';
 import { EstadosComponent } from './configuracion/estados/estados.component';
 import { LugarComponent } from './administracion/lugares/lugar.component';
 import { LugaresComponent } from './administracion/lugares/lugares.component';
+import { LoginGuard } from '../services/service.index';
 
 
 const pageRoutes: Routes = [
   {
     path: '',
     component: PagesComponent,
+    canActivate: [LoginGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent, data: { titulo: 'Dashboard'} },
       { path: 'reportes', component: ReportesComponent,  data: { titulo: 'Reportes'} },
