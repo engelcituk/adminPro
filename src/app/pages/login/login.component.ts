@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
 
   recuerdame: boolean = false;
   username: string; // esto es para mantener info en el campo nombre de usuario, usando el check recuerdame
+  token: string;
+
   constructor(
     public router: Router,
     public usuarioService: UsuarioService
@@ -27,7 +29,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     initPlugins();
     this.username = localStorage.getItem('username') || ''; //  si no hay nada en ls, username es vacio
-
+    this.usuarioYaLogueado();
   }
 
   ingresar(forma: NgForm) {
@@ -40,5 +42,11 @@ export class LoginComponent implements OnInit {
     this.usuarioService.login(usuario, forma.value.recuerdame)
       .subscribe( loginExitoso => this.router.navigate(['/dashboard']) );
 
+  }
+  // funcion que verifica si token existe, si es así es porque el usuario ya inició sesion
+  usuarioYaLogueado() {
+    if (localStorage.getItem('token')) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 }

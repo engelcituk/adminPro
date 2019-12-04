@@ -31,7 +31,7 @@ export class UsuarioService {
   }
   // cargar datos desde el storage
   cagarDatosStorage() {
-    if(localStorage.getItem('token')) {
+    if (localStorage.getItem('token')) {
       this.token = localStorage.getItem('token');
       this.usuario = JSON.parse(localStorage.getItem('usuario'));
     } else {
