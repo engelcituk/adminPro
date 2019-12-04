@@ -57,6 +57,13 @@ export class UsuarioService {
   // para el login de usuario
   login(usuario: Usuario, recordar: boolean = false) {
     const url = URL_SERVICIOS + 'login';
+
+    if (recordar) {
+      localStorage.setItem('username', usuario.usuario);
+    } else {
+      localStorage.removeItem('username');
+    }
+
     return this.http.post(url, usuario).pipe(
       map((respuesta: any) => {
         localStorage.setItem('id', respuesta.id);

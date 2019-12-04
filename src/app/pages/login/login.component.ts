@@ -17,8 +17,8 @@ declare function initPlugins();
 })
 export class LoginComponent implements OnInit {
 
-  recuerdame: boolean = true;
-
+  recuerdame: boolean = false;
+  username: string; // esto es para mantener info en el campo nombre de usuario, usando el check recuerdame
   constructor(
     public router: Router,
     public usuarioService: UsuarioService
@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     initPlugins();
+    this.username = localStorage.getItem('username') || '';
+
   }
 
   ingresar(forma: NgForm) {

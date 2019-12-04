@@ -9,7 +9,8 @@
                 </a>
                 <div class="form-group m-t-40">
                     <div class="col-xs-12">
-                        <input type="text" class="form-control" ngModel name="username" placeholder="Nombre de usuario" required>
+                        <!-- llaves cuadradas en el ngModel es para setear un valor -->
+                        <input type="text" class="form-control" [ngModel]="username" name="username" placeholder="Nombre de usuario" required>
                     </div>
                 </div>
                 <div class="form-group">
@@ -20,6 +21,7 @@
                 <div class="form-group row">
                     <div class="col-md-12">
                         <div class="checkbox checkbox-primary float-left p-t-0">
+                        <!-- llaves cuadradas en el ngModel es para setear un valor, los parentesis signfica que se pueden cambiar por el usuario-->
                             <input id="checkbox-signup" type="checkbox" [(ngModel)]="recuerdame" name="recuerdame" class="filled-in chk-col-light-blue">
                             <label for="checkbox-signup"> Recordar</label>
                         </div>
