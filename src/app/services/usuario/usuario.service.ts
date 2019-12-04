@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../../models/usuario.model';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
+import { URL_SERVICIOS } from '../../../app/config/config';
 
 
 @Injectable({
@@ -10,16 +11,18 @@ import Swal from 'sweetalert2';
 })
 export class UsuarioService {
 
+  url: string = 'usuario'; // endpoint
+
   constructor(public http: HttpClient) {
 
     console.log('Servicio de usuarios cargado');
 
   }
 
-  // funcion tanto para guardar POST y actualizar (PUT)
+  // funcion tanto para guardar POST y actualizar (PUT), funcional en el dashboard
   saveUsuario(usuario: Usuario) {
 
-    let url = 'usuario';
+    let url = this.url;
 
     if (usuario._id) {
       // actualizo el dato
@@ -40,6 +43,18 @@ export class UsuarioService {
     }
 
   }
+
+  crearUsuario(usuario: Usuario) {
+    const url = URL_SERVICIOS + this.url;
+    console.log(usuario);
+    return this.http.post(url, usuario).pipe(
+      map((respuesta: any) => {
+        Swal.fire('Usuario creado', usuario.name, 'success');
+        return respuesta.usuario;
+      }));
+
+  }
+
   getUsuarios(desde: number = 0) {
 
     const url = 'usuario?desde=' + desde;
@@ -48,7 +63,9 @@ export class UsuarioService {
   }
   // obtener un usuario
   getUsuario(id: string) {
-    const url = 'usuario/';
+
+    const url = URL_SERVICIOS + this.url + '/';
+
     return this.http.get(url + id).pipe(
       map((respuesta: any) => respuesta.usuario));
   }

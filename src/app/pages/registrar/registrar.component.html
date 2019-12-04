@@ -26,7 +26,14 @@
                     <div class="col-xs-12">
                         <input type="password"  class="form-control" formControlName="password2" name="password2"   placeholder="Confirmar Contraseña" required>
                     </div>
-                </div>                
+                </div> 
+                <!-- el error igual solo aparece si el formulario no esta pristine, ha sido tocada-->
+                <div class="form-group" *ngIf="forma.errors?.sonIguales && !forma.pristine">
+                    <p class="text-danger">
+                        Las contraseñas deben de ser iguales
+                    </p>
+                </div>
+                
                 <div class="form-group text-center m-t-20">
                     <div class="col-xs-12">
                         <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light"

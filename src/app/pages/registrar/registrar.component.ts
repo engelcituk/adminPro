@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UsuarioService } from '../../services/service.index';
+// import { Usuario } from './../../models/usuario.model';
+import { Usuario } from '../../models/usuario.model';
+
+
+
+import Swal from 'sweetalert2';
+
+
 
 declare function initPlugins();
 
@@ -13,7 +22,7 @@ export class RegistrarComponent implements OnInit {
 
   forma: FormGroup; // formulario de tipo reactive forms, par el registro de un usuario
 
-  constructor() { }
+  constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit() {
     initPlugins();
@@ -21,16 +30,31 @@ export class RegistrarComponent implements OnInit {
     this.forma = new FormGroup({
                     // FormControl(valorDefecto, validaciones)
       nombre: new FormControl(null, Validators.required),
-      username: new FormControl(null, [Validators.required, Validators.email]),
+      username: new FormControl(null, Validators.required),
       password: new FormControl(null, Validators.required),
       password2: new FormControl(null, Validators.required)
     }, { validators: this.sonIguales('password', 'password2')});
 
   }
   registrarUsuario() {
-    // this.forma.value obtiene el valor de los campos del formulario
-    console.log(this.forma.value);
-    console.log(this.forma.valid);
+    // this.forma.value obtiene el valor de los campos del formulario: console.log(this.forma.value); console.log(this.forma.invalid);
+    if ( this.forma.invalid ) {
+        return;
+    }
+
+    const usuario = new Usuario(
+      this.forma.value.nombre,
+      this.forma.value.username,
+      this.forma.value.password,
+      'USER_ROLE',
+      '',
+      true
+    );
+
+    this.usuarioService.crearUsuario( usuario)
+    .subscribe(respuesta => {
+      console.log(respuesta);
+    });
 
   }
 
@@ -43,10 +67,13 @@ export class RegistrarComponent implements OnInit {
       if (pass1 === pass2) {
         return null;
       }
+
       return {
         sonIguales: true
       };
     };
   }
+
+
 
 }

@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   providedIn: 'root'
 })
 export class HotelService {
+  url: string = 'hotel'; // endpoint
 
   constructor(public http: HttpClient) {
     // console.log('hotel servicio cargado');
@@ -17,7 +18,7 @@ export class HotelService {
   // funcion tanto para guardar POST y actualizar (PUT)
   saveHotel(hotel: Hotel) {
 
-    let url = 'hotel';
+    let url = this.url;
 
     if (hotel._id) {
       // actualizo el dato
