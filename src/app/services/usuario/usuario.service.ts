@@ -59,7 +59,11 @@ export class UsuarioService {
     const url = URL_SERVICIOS + 'login';
     return this.http.post(url, usuario).pipe(
       map((respuesta: any) => {
-        return respuesta;
+        localStorage.setItem('id', respuesta.id);
+        localStorage.setItem('token', respuesta.token);
+        localStorage.setItem('usuario', JSON.stringify(respuesta.usuario));
+
+        return true; // se logueó, Sí
       }));
 
   }
