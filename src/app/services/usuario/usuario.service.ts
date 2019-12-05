@@ -40,7 +40,7 @@ export class UsuarioService {
       map((respuesta: any) => {
         this.token = respuesta.token;
         localStorage.setItem('token', this.token);
-
+        console.log('token renovado');
         return true;
       }), catchError ( err => {
          this.router.navigate(['/login']);
