@@ -7,7 +7,7 @@ import { UsuarioService } from './../usuario/usuario.service';
 })
 export class VerificaTokenGuard implements CanActivate {
 
-  constructor( 
+  constructor(
     public usuarioService: UsuarioService,
     public router: Router
     ) {
