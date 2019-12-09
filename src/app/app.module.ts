@@ -19,11 +19,12 @@ import { RegistrarComponent } from './pages/registrar/registrar.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegistrarComponent,
+    RegistrarComponent
   ],
   imports: [
     BrowserModule,

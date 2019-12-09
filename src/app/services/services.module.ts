@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalEventoService } from './../components/modal-eventos/modal-evento.service';
 
 
 import {
@@ -22,7 +23,7 @@ import {
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+  CommonModule,
     HttpClientModule
   ],
   providers: [
@@ -36,6 +37,7 @@ import {
     UsuarioService,
     ClienteService,
     AgenciaService,
+    ModalEventoService,
     LoginGuard,
     VerificaTokenGuard
   ]

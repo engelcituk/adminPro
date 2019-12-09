@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-// import * as moment from 'moment';
+import * as moment from 'moment';
 // import { Observable } from 'rxjs';
 // import { NgForm } from '@angular/forms';
 import '../../../../../node_modules/fullcalendar/dist/locale/es';
 
 
 import { EventoService } from './../../../services/service.index';
+import { ModalEventoService } from '../../../components/modal-eventos/modal-evento.service';
 import { EventoModel } from '../../../models/evento.model';
 import * as $ from 'jquery';
 // import Swal from 'sweetalert2';
@@ -25,8 +26,10 @@ export class AgendaComponent implements OnInit {
   cargando = false;
 
   private mdlSampleIsOpen;
+  modalOculto: string = '';
 
-  constructor(private router: Router, private eventoService: EventoService) { }
+
+  constructor(private router: Router, private eventoService: EventoService, public modalEventoService: ModalEventoService) { }
 
   ngOnInit() {
     this.cargando = true;
@@ -34,6 +37,7 @@ export class AgendaComponent implements OnInit {
       this.eventos = respuesta.eventos;
       this.cargarCalendario();
       this.cargando = false;
+      this.modalOculto = '';
     });
   }
   cargarCalendario() {
@@ -51,8 +55,7 @@ export class AgendaComponent implements OnInit {
 
         dayClick: (date) => {
           this.fecha = date.format();
-          // this.diaClick(date, this.fecha);
-          console.log(date.format());
+          this.diaClick(date, this.fecha);
         },
         eventClick: (event) => {
           console.log('hiciste clic', event.color);
@@ -63,17 +66,16 @@ export class AgendaComponent implements OnInit {
     }, 100);
   }
 
-  // diaClick(date, fecha) {
-  //   if (moment().format('YYYY-MM-DD') === date.format('YYYY-MM-DD') || date.isAfter(moment())) {
-  //     // This allows today and future date
-  //     // this.router.navigateByUrl(`/agenda/nuevo/${fecha}`);
-  //     this.evento.fechaEvento = fecha;
-  //     // this.openModal(true);
-  //   } else {
-  //     // Else part is for past dates
-  //     console.log('no puedes crear eventos para dias pasados a hoy');
-  //   }
-  // }
+  diaClick(date, fecha) {
+    if (moment().format('YYYY-MM-DD') === date.format('YYYY-MM-DD') || date.isAfter(moment())) {
+      console.log('Días cool');
+      this.modalEventoService.mostrarModal('hola', 'hola');
+    } else {
+      // Else part is for past dates
+      console.log('no puedes crear eventos para dias pasados a hoy');
+    }
+  }
+  
 
   // deleteEvento(evento: EventoModel, indice: number) {
 

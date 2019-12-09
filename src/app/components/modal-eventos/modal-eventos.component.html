@@ -1,0 +1,60 @@
+<div class="fondo-negro animated fadeIn" [ngClass]="modalEventoService.modalOculto">
+    <div class="modal" style="display: block;" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modalEVentoLabel">Evento</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                        (click)="cerrarModal()">×</button>
+                </div>
+                <form (ngSubmit)="guardarEvento(form)" #form="ngForm">
+                    <div class="modal-body">
+                        <!-- <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">ID</label>
+                                    <input type="text" class="form-control" disabled [(ngModel)]="evento.id" name="id">
+                                    <small>Este campo Id es autogenerado</small>
+                                </div>
+        
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Color</label>
+                                    <input type="text" class="form-control" disabled [(ngModel)]="evento.color" name="color">
+                                    <small>Este campo tiene valor default</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating"> Fecha evento</label>
+                                    <input type="text" class="form-control" disabled [(ngModel)]="evento.fechaEvento"
+                                        name="fechaEvento">
+                                    <small>obtenida del calendario</small>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating"> Titulo evento</label>
+                                    <input type="text" class="form-control" [(ngModel)]="evento.title" name="title" required>
+                                </div>
+                            </div>
+                        </div> -->
+                                               
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-warning waves-effect text-left" (click)="cerrarModal()"> <i
+                                class="fas fa-undo"></i> Salir
+                        </button>
+                        <button type="submit" class="btn btn-primary waves-effect">
+                            <i class="fas fa-save"></i> Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+    </div>
+</div>

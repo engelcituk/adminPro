@@ -39,6 +39,7 @@ import { EstadoComponent } from './configuracion/estados/estado.component';
 import { LugaresComponent } from './administracion/lugares/lugares.component';
 import { LugarComponent } from './administracion/lugares/lugar.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { ModalEventosComponent } from '../components/modal-eventos/modal-eventos.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
       LugaresComponent,
       LugarComponent,
       BusquedaComponent,
+      ModalEventosComponent
 
     ],
   exports: [
