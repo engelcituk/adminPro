@@ -33,7 +33,7 @@
                                     </span>
                                 </span>
                                 <select [(ngModel)]="horario.hotel" name="hotel" class="form-control custom-select" required>
-                                    <option value="">Seleccione hotel</option>
+                                    <!-- <option value="">Seleccione hotel</option> -->
                                     <option *ngFor="let hotel of hoteles" [value]="hotel._id">{{hotel.name}}</option>                                                        
                                 </select>
                             </div>

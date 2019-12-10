@@ -17,7 +17,7 @@ export class ModalEventoService {
     this.id = null;
     this.tipo = null;
   }
-  mostrarModal(tipo: string, id: string ) {
+  mostrarModal(tipo: string, id: string) {
     this.modalOculto = '';
     this.id = id;
     this.tipo = tipo;

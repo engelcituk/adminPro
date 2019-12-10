@@ -60,7 +60,11 @@ export class AgendaComponent implements OnInit {
         eventClick: (event) => {
           console.log('hiciste clic', event.color);
 
-        }
+        },
+        // selectable: true,
+        // selectAllow: (selectInfo) => {
+        //   return moment().diff(selectInfo.start) <= 0;
+        // },
 
       });
     }, 100);
@@ -68,14 +72,13 @@ export class AgendaComponent implements OnInit {
 
   diaClick(date, fecha) {
     if (moment().format('YYYY-MM-DD') === date.format('YYYY-MM-DD') || date.isAfter(moment())) {
-      console.log('Días cool');
-      this.modalEventoService.mostrarModal('hola', 'hola');
+      this.modalEventoService.mostrarModal(date, fecha);
+      console.log('Días cool', date, fecha);
     } else {
       // Else part is for past dates
       console.log('no puedes crear eventos para dias pasados a hoy');
     }
   }
-  
 
   // deleteEvento(evento: EventoModel, indice: number) {
 
@@ -148,6 +151,3 @@ export class AgendaComponent implements OnInit {
 
   }
 }
-
-
-

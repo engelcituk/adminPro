@@ -58,9 +58,8 @@ export class HorarioComponent implements OnInit {
     this.horarioService.getHorario(id)
       .subscribe((horario: Horario) => {
         this.horario = horario;
-        // this.horario.hotel = horario.hotel;
-
-        // console.log(this.horario);
+        this.horario.hotel = horario.hotel;
+        console.log(this.horario.hotel);
       });
 
   }

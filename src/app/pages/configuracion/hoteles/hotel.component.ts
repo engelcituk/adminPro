@@ -12,25 +12,22 @@ import Swal from 'sweetalert2';
   styles: []
 })
 export class HotelComponent implements OnInit {
-
   formHotel: FormGroup;
   hotel: Hotel = new Hotel('', '', '');
 
-  constructor(public hotelService: HotelService,
-              public router: Router,
-              public rutaActivada: ActivatedRoute
-    ) {
-
-  }
+  constructor(
+    public hotelService: HotelService,
+    public router: Router,
+    public rutaActivada: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     const id: any = this.rutaActivada.snapshot.paramMap.get('id');
 
     if (id !== 'nuevo') {
-      this.hotelService.getHotel(id)
-        .subscribe((respuesta: Hotel) => {
-          this.hotel = respuesta;
-        });
+      this.hotelService.getHotel(id).subscribe((respuesta: Hotel) => {
+        this.hotel = respuesta;
+      });
     }
   }
 
@@ -40,10 +37,9 @@ export class HotelComponent implements OnInit {
     if (formHotel.invalid) {
       return;
     }
-    this.hotelService.saveHotel(this.hotel).subscribe( hotel => {
+    this.hotelService.saveHotel(this.hotel).subscribe(hotel => {
       this.hotel._id = hotel._id;
       this.router.navigate(['/hotel', this.hotel._id]);
     });
   }
-
 }
