@@ -31,10 +31,9 @@ export class AgenciaComponent implements OnInit {
         .subscribe((respuesta: Agencia) => {
           this.agencia = respuesta;
           // this.campoPassword = false;
-          //console.log(this.agencia);
+          // console.log(this.agencia);
         });
     }
-  
   }
 
   // para guardar a un nuevo agencia

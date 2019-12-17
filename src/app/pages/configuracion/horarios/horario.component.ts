@@ -16,6 +16,7 @@ export class HorarioComponent implements OnInit {
   formHorario: FormGroup;
   hoteles: Hotel[] = [];
   horario: Horario = new Horario('', '');
+  idHotel: any;
 
   constructor(
     public horarioService: HorarioService,
@@ -26,8 +27,8 @@ export class HorarioComponent implements OnInit {
 
       const id: any = this.rutaActivada.snapshot.paramMap.get('id');
       if (id !== 'nuevo') {
-
         this.getHorario(id);
+
     }
 
   }
