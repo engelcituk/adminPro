@@ -15,6 +15,7 @@ import {
   UsuarioService,
   ClienteService,
   AgenciaService,
+  PaqueteService,
   LoginGuard,
   VerificaTokenGuard
 } from './service.index';
@@ -22,10 +23,7 @@ import {
 
 @NgModule({
   declarations: [],
-  imports: [
-  CommonModule,
-    HttpClientModule
-  ],
+  imports: [CommonModule, HttpClientModule],
   providers: [
     SettingsService,
     SharedService,
@@ -37,9 +35,10 @@ import {
     UsuarioService,
     ClienteService,
     AgenciaService,
+    PaqueteService,
     ModalEventoService,
     LoginGuard,
     VerificaTokenGuard
   ]
 })
-export class ServicesModule { }
+export class ServicesModule {}

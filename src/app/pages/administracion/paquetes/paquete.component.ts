@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+
+import { NgForm, FormGroup } from '@angular/forms';
+
+import { Router, ActivatedRoute } from '@angular/router';
+import { PaqueteService } from '../../../services/service.index';
+
 import { Paquete } from './../../../models/paquete.model';
 
 @Component({
@@ -9,24 +14,42 @@ import { Paquete } from './../../../models/paquete.model';
 })
 export class PaqueteComponent implements OnInit {
   formPaquete: FormGroup;
-  paquete: Paquete = new Paquete('', '', '', 0, true);
 
-  constructor() { }
+  paquete: Paquete = new Paquete('', '', '', true);
+
+  constructor(
+    public paqueteService: PaqueteService,
+    public router: Router,
+    public rutaActivada: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    const id: any = this.rutaActivada.snapshot.paramMap.get('id');
+
+    if (id !== 'nuevo') {
+      this.paqueteService.getPaquete(id).subscribe((respuesta: Paquete) => {
+        this.paquete = respuesta;
+        // this.campoPassword = false;
+        console.log(this.paquete);
+      });
+    }
   }
 
+  // para guardar a un nuevo paquete
   savePaquete(formPaquete: NgForm) {
-    console.log(formPaquete.valid);
-    console.log(formPaquete.value);
+    // console.log(formPaquete.valid);s
+    // console.log(formPaquete.value);s
     if (formPaquete.invalid) {
       return;
     }
-    // this.hotelService.saveHotel(this.hotel).subscribe(hotel => {
-    //   this.hotel.id = hotel.id;
-    //   this.router.navigate(['/hotel', this.hotel.id]);
-    // });
-
+    this.paqueteService.savePaquete(this.paquete).subscribe(paquete => {
+      this.paquete._id = paquete._id;
+      // recargo la pagina
+      this.router
+        .navigateByUrl('/PaqueteComponent', { skipLocationChange: true })
+        .then(() => {
+          this.router.navigate(['paquete', this.paquete._id]);
+        });
+    });
   }
-
 }

@@ -4,9 +4,9 @@ export class Paquete {
         public name: string,
         public descripcion: string,
         public clave: string,
-        public total: number,
         public status: boolean,
-        public id?: number,
+        public total?: number,
+        public _id?: string,
         public idHotel?: number,
         public idMoneda?: number,
     ) {

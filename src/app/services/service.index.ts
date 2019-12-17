@@ -13,6 +13,8 @@ export { EstadoService } from './estado/estado.service';
 export { UsuarioService } from './usuario/usuario.service';
 export { ClienteService } from './cliente/cliente.service';
 export { AgenciaService } from './agencia/agencia.service';
+export { PaqueteService } from './paquete/paquete.service';
+
 
 
 

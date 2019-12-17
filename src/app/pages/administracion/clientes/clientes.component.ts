@@ -69,7 +69,7 @@ export class ClientesComponent implements OnInit {
     });
 
   }
-
+// para borrar a un cliente
   borrarCliente(cliente: Cliente, indice: number) {
 
     Swal.fire({

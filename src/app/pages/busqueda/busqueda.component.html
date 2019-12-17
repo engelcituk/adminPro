@@ -110,4 +110,23 @@
             </div>
         </div>
     </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"> <i class="fas fa-box-open"></i> Paquetes</h4>
+                <table class="table table-hover" *ngIf="paquetes.length > 0">
+                    <tbody>
+                        <tr *ngFor="let paquete of paquetes ; let i = index" [routerLink]="['/paquetes']"
+                            style="cursor:pointer;">
+                            <td>{{paquete.name}}</td>
+                            <td>{{paquete.descripcion}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-warning" *ngIf="paquetes.length === 0">
+                    No hay registros encontrados
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
