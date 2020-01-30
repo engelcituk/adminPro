@@ -24,4 +24,4 @@ export const ENDPOINTS =  {
         updateHorario: URL_SERVICIOS_API + 'Horarios/updateHorario/',
         deleteHorario: URL_SERVICIOS_API + 'Horarios/deleteHorario/'
     }
-}
+};
