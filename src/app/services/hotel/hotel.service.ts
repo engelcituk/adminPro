@@ -12,7 +12,7 @@ export class HotelService {
   url: string = 'hotel'; // endpoint
 
   constructor(public http: HttpClient) {
-    // console.log('hotel servicio cargado');
+    console.log('hotel servicio cargado');
   }
 
   // funcion tanto para guardar POST y actualizar (PUT)
