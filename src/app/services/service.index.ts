@@ -14,6 +14,7 @@ export { UsuarioService } from './usuario/usuario.service';
 export { ClienteService } from './cliente/cliente.service';
 export { AgenciaService } from './agencia/agencia.service';
 export { PaqueteService } from './paquete/paquete.service';
+export { LugarService } from './lugar/lugar.service';
 
 
 

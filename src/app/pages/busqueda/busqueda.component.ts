@@ -8,7 +8,7 @@ import { Usuario } from '../../models/usuario.model';
 import { Cliente } from '../../models/cliente.model';
 import { Agencia } from '../../models/agencia.model';
 import { Paquete } from '../../models/paquete.model';
-
+import { Lugar } from '../../models/lugar.model';
 
 
 @Component({
@@ -24,6 +24,8 @@ export class BusquedaComponent implements OnInit {
   clientes: Cliente[] = [];
   agencias: Agencia[] = [];
   paquetes: Paquete[] = [];
+  lugares: Lugar[] = [];
+
 
   constructor(public activatedRoute: ActivatedRoute, public http: HttpClient) {
     activatedRoute.params.subscribe(params => {
@@ -45,7 +47,7 @@ export class BusquedaComponent implements OnInit {
       this.clientes = respuesta.clientes;
       this.agencias = respuesta.agencias;
       this.paquetes = respuesta.paquetes;
-
+      this.lugares = respuesta.lugares;
     });
   }
 }

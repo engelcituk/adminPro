@@ -129,4 +129,23 @@
             </div>
         </div>
     </div>
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"> <i class="fas fa-map-marker-alt"></i> Lugares</h4>
+                <table class="table table-hover" *ngIf="lugares.length > 0">
+                    <tbody>
+                        <tr *ngFor="let lugar of lugares ; let i = index" [routerLink]="['/lugares']"
+                            style="cursor:pointer;">
+                            <td>{{lugar.name}}</td>
+                            <td>{{lugar.hotel.name}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert alert-warning" *ngIf="lugares.length === 0">
+                    No hay registros encontrados
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

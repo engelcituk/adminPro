@@ -14,7 +14,7 @@
                     <div class="input-group">
                         <span class="input-group-addon input-group-prepend">
                             <span class="input-group-text">
-                                <i class="fas fa-hotel"></i>
+                                <i class="fas fa-map-marker-alt"></i>
                             </span>
                         </span>
 
@@ -55,8 +55,7 @@
                         <tr>
                             <th>#</th>
                             <th>Nombre</th>
-                            <th>Código</th>
-                            <th>Empresa</th>
+                            <th>Hotel</th>                            
                             <th>Acciones</th>
                         </tr>
                     </thead>
@@ -64,14 +63,13 @@
                         <tr *ngFor="let lugar of lugares ; let i = index">
                             <td>{{i+1}}</td>
                             <td>{{lugar.name}}</td>
-                            <td>{{lugar.codigo}}</td>
-                            <td>{{lugar.empresa}}</td>
+                            <td>{{lugar.hotel.name}}</td>                            
                             <td>
-                                <button class="btn btn-primary" [routerLink]="['/lugar',lugar.id]">
+                                <button class="btn btn-primary" [routerLink]="['/lugar',lugar._id]">
                                     <i class="fas fa-edit"></i>
                                 </button> &nbsp;
 
-                                <button class="btn btn-danger" (click)="borrarlugar(lugar, i)">
+                                <button class="btn btn-danger" (click)="borrarLugar(lugar, i)">
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>

@@ -16,10 +16,10 @@ import {
   ClienteService,
   AgenciaService,
   PaqueteService,
+  LugarService,
   LoginGuard,
   VerificaTokenGuard
 } from './service.index';
-
 
 @NgModule({
   declarations: [],
@@ -36,6 +36,7 @@ import {
     ClienteService,
     AgenciaService,
     PaqueteService,
+    LugarService,
     ModalEventoService,
     LoginGuard,
     VerificaTokenGuard
