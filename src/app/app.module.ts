@@ -7,18 +7,14 @@ import { APP_ROUTES } from './app.routes';
 // modulos
 import { PageModule } from './pages/pages.module';
 
-// temporal
+//  para formulario reactivos
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // servicios
 import { ServicesModule } from './services/services.module';
-
-
+// paginas principales
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegistrarComponent } from './pages/registrar/registrar.component';
-
-
-
 
 @NgModule({
   declarations: [
