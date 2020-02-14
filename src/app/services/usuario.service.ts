@@ -32,7 +32,7 @@ export class UsuarioService {
   }
 // para renovar token
   renuevaToken() {
-    let url = URL_SERVICIOS + 'login/renuevatoken';
+    let url =  'login/renuevatoken';
     url += '?token=' + this.token;
 
     return this.http.get(url)
@@ -90,7 +90,7 @@ export class UsuarioService {
   }
   // para registrar usuario antes de  poder hacer login
   crearUsuario(usuario: Usuario) {
-    const url = URL_SERVICIOS + this.url;
+    const url =  this.url;
 
     return this.http.post(url, usuario).pipe(
       map((respuesta: any) => {
@@ -101,7 +101,7 @@ export class UsuarioService {
   }
   // para el login de usuario
   login(usuario: Usuario, recordar: boolean = false) {
-    const url = URL_SERVICIOS + 'login';
+    const url =  'login';
 
     if (recordar) {
       localStorage.setItem('username', usuario.usuario);
@@ -146,7 +146,7 @@ export class UsuarioService {
   // obtener un usuario
   getUsuario(id: string) {
 
-    const url = URL_SERVICIOS + this.url + '/';
+    const url =  this.url + '/';
 
     return this.http.get(url + id).pipe(
       map((respuesta: any) => respuesta.usuario));
