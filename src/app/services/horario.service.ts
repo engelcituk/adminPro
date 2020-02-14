@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Horario } from '../../models/horario.model';
+import { Horario } from '../models/horario.model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';

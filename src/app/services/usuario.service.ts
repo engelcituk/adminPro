@@ -8,8 +8,8 @@ import { throwError } from 'rxjs';
 // sweetalert
 import Swal from 'sweetalert2';
 // modelo, configuracion endpoint
-import { Usuario } from '../../models/usuario.model';
-import { URL_SERVICIOS } from '../../../app/config/config';
+import { Usuario } from '../models/usuario.model';
+import { URL_SERVICIOS } from '../../app/config/config';
 
 
 @Injectable({

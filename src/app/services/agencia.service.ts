@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Agencia } from '../../models/agencia.model';
+import { Agencia } from '../models/agencia.model';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 

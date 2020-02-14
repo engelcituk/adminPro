@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Estado } from '../../models/estado.model';
+import { Estado } from '../models/estado.model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';

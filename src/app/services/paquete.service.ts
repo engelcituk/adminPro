@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
-import { Paquete } from '../../models/paquete.model';
+import { Paquete } from '../models/paquete.model';
 
 
 @Injectable({

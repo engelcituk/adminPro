@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Lugar } from '../../models/lugar.model';
+import { Lugar } from '../models/lugar.model';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';

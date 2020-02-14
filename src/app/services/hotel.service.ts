@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Hotel } from '../../models/hotel.model';
+import { Hotel } from '../models/hotel.model';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
