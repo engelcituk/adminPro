@@ -1,6 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserModule } from '@angular/platform-browser';
 // RUTAS
 import { APP_ROUTES } from './app.routes';
 
@@ -17,18 +16,14 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegistrarComponent } from './pages/registrar/registrar.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    RegistrarComponent
-  ],
+  declarations: [AppComponent, LoginComponent, RegistrarComponent],
   imports: [
     BrowserModule,
     APP_ROUTES,
     PageModule,
     FormsModule,
     ReactiveFormsModule, // para formulario reactivos, se usa en el register de usuarios antes de entrar al dashboard
-    ServicesModule // este son los servicios, pero como es un modulo, va en los imports
+    ServicesModule, // este son los servicios, pero como es un modulo, va en los imports    
   ],
   providers: [],
   bootstrap: [AppComponent]
