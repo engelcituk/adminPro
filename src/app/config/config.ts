@@ -25,3 +25,24 @@ export const ENDPOINTS =  {
         deleteHorario: URL_SERVICIOS_API + 'Horarios/deleteHorario/'
     }
 };
+
+export const ROLES = {
+    roles: [
+        {
+            nombre: 'admin',
+            descripcion: 'el de mas nivel'
+        },
+        {
+            nombre: 'usuario',
+            descripcion: 'rol basico'
+        },
+        {
+            nombre: 'visitante',
+            descripcion: 'rol basico 2'
+        },
+        {
+            nombre: 'vendedor',
+            descripcion: 'rol basico 3'
+        }
+    ]
+}

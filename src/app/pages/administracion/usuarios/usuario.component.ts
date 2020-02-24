@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { Usuario } from './../../../models/usuario.model';
 import { UsuarioService } from '../../../services/service.index';
 import { Router, ActivatedRoute } from '@angular/router';
+import {ROLES} from '../../../config/config';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class UsuarioComponent implements OnInit {
   formUsuario: FormGroup;
   usuario: Usuario = new Usuario('', '', '', '', '', true);
   campoPassword: boolean = true;
+  roles: any;
 
 
 
@@ -35,6 +37,8 @@ export class UsuarioComponent implements OnInit {
           console.log(this.usuario);
         });
     }
+    this.roles = ROLES;
+    console.log(this.roles);
   }
   // para guardar a un nuevo usuario
   saveUsuario(formUsuario: NgForm) {

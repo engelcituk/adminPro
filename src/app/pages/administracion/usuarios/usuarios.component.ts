@@ -15,11 +15,13 @@ export class UsuariosComponent implements OnInit {
   desde: number = 0;
   totalRegistros: number = 0;
   cargando: boolean;
+  roles: any;
 
   constructor(public usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.getUsuarios();
+    
   }
 
   // cargar usuarioes
