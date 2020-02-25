@@ -47,7 +47,7 @@ export class AgenciaComponent implements OnInit {
       this.agencia._id = agencia._id;
       // recargo la pagina
       this.router.navigateByUrl('/AgenciaComponent', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['agencia', this.agencia._id]);
+        this.router.navigate(['agencias', this.agencia._id]);
       });
     });
   }

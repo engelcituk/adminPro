@@ -42,7 +42,7 @@ export class EstadoComponent implements OnInit {
     }
     this.estadoService.saveEstado(this.estado).subscribe(hotel => {
       this.estado._id = hotel._id;
-      this.router.navigate(['/estado', this.estado._id]);
+      this.router.navigate(['/estados', this.estado._id]);
     });
   }
 

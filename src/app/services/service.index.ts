@@ -5,7 +5,6 @@ export { VerificaTokenGuard } from './guards/verifica-token.guard';
 
 // services
 export { SettingsService } from './settings.service';
-export { SharedService } from './shared/shared.service';
 export { SidebarService } from './shared/sidebar.service';
 export { HorarioService } from './horario.service';
 export { HotelService } from './hotel.service';
@@ -16,6 +15,8 @@ export { ClienteService } from './cliente.service';
 export { AgenciaService } from './agencia.service';
 export { PaqueteService } from './paquete.service';
 export { LugarService } from './lugar.service';
+export { PermisoService } from './permiso.service';
+
 
 
 

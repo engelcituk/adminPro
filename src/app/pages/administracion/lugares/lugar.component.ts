@@ -54,7 +54,7 @@ export class LugarComponent implements OnInit {
       this.router
         .navigateByUrl('/LugarComponent', { skipLocationChange: true })
         .then(() => {
-          this.router.navigate(['lugar', this.lugar._id]);
+          this.router.navigate(['lugares', this.lugar._id]);
         });
     });
   }

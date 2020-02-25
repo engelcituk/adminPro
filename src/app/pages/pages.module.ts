@@ -40,6 +40,8 @@ import { LugaresComponent } from './administracion/lugares/lugares.component';
 import { LugarComponent } from './administracion/lugares/lugar.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ModalEventosComponent } from '../components/modal-eventos/modal-eventos.component';
+import { PermisosComponent } from './configuracion/permisos/permisos.component';
+import { PermisoComponent } from './configuracion/permisos/permiso.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +73,9 @@ import { ModalEventosComponent } from '../components/modal-eventos/modal-eventos
     LugaresComponent,
     LugarComponent,
     BusquedaComponent,
-    ModalEventosComponent
+    ModalEventosComponent,
+    PermisosComponent,
+    PermisoComponent
   ],
   exports: [DashboardComponent, ReportesComponent, AgendaComponent],
   imports: [

@@ -6,7 +6,6 @@ import { ModalEventoService } from './../components/modal-eventos/modal-evento.s
 
 import {
   SettingsService,
-  SharedService,
   SidebarService,
   HotelService,
   HorarioService,
@@ -17,6 +16,7 @@ import {
   AgenciaService,
   PaqueteService,
   LugarService,
+  PermisoService,
   LoginGuard,
   VerificaTokenGuard
 } from './service.index';
@@ -26,7 +26,6 @@ import {
   imports: [CommonModule, HttpClientModule],
   providers: [
     SettingsService,
-    SharedService,
     SidebarService,
     HotelService,
     HorarioService,
@@ -37,6 +36,7 @@ import {
     AgenciaService,
     PaqueteService,
     LugarService,
+    PermisoService,
     ModalEventoService,
     LoginGuard,
     VerificaTokenGuard

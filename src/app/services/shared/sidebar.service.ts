@@ -66,6 +66,9 @@ export class SidebarService {
         },
         {
           titulo: 'Estados', url: '/estados'
+        },
+        {
+          titulo: 'Permisos', url: '/permisos'
         }
       ]
     }

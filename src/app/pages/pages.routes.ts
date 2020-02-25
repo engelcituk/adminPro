@@ -19,6 +19,8 @@ import { ClienteComponent } from './administracion/clientes/cliente.component';
 import { ClientesComponent } from './administracion/clientes/clientes.component';
 import { UsuarioComponent } from './administracion/usuarios/usuario.component';
 import { UsuariosComponent } from './administracion/usuarios/usuarios.component';
+import { LugaresComponent } from './administracion/lugares/lugares.component';
+import { LugarComponent } from './administracion/lugares/lugar.component';
 
 // para el buscador
 import { BusquedaComponent } from './busqueda/busqueda.component';
@@ -30,8 +32,9 @@ import { HorariosComponent } from './configuracion/horarios/horarios.component';
 import { HorarioComponent } from './configuracion/horarios/horario.component';
 import { EstadoComponent } from './configuracion/estados/estado.component';
 import { EstadosComponent } from './configuracion/estados/estados.component';
-import { LugarComponent } from './administracion/lugares/lugar.component';
-import { LugaresComponent } from './administracion/lugares/lugares.component';
+import { PermisosComponent } from './configuracion/permisos/permisos.component';
+import { PermisoComponent } from './configuracion/permisos/permiso.component';
+
 import { LoginGuard, VerificaTokenGuard } from '../services/service.index';
 
 
@@ -58,25 +61,27 @@ const pageRoutes: Routes = [
       { path: 'rxjs', component: RxjsComponent, data: { titulo: 'RxJs'} },
       // area de administracion
       { path: 'agencias', component: AgenciasComponent, data: { titulo: 'Agencias' } },
-      { path: 'agencia/:id', component: AgenciaComponent, data: { titulo: 'Crear/actualizar agencia' } },
+      { path: 'agencias/:id', component: AgenciaComponent, data: { titulo: 'Crear/actualizar agencia' } },
       { path: 'paquetes', component: PaquetesComponent, data: { titulo: 'Paquetes' } },
-      { path: 'paquete/:id', component: PaqueteComponent, data: { titulo: 'Crear/actualizar paquete' } },
+      { path: 'paquetes/:id', component: PaqueteComponent, data: { titulo: 'Crear/actualizar paquete' } },
       { path: 'lugares', component: LugaresComponent, data: { titulo: 'Lugares' } },
-      { path: 'lugar/:id', component: LugarComponent, data: { titulo: 'Crear/actualizar lugar' } },
+      { path: 'lugares/:id', component: LugarComponent, data: { titulo: 'Crear/actualizar lugar' } },
       { path: 'clientes', component: ClientesComponent, data: { titulo: 'Clientes' } },
-      { path: 'cliente/:id', component: ClienteComponent, data: { titulo: 'Crear/actualizar cliente' } },
+      { path: 'clientes/:id', component: ClienteComponent, data: { titulo: 'Crear/actualizar cliente' } },
       { path: 'usuarios', component: UsuariosComponent, data: { titulo: 'Usuarios' } },
-      { path: 'usuario/:id', component: UsuarioComponent, data: { titulo: 'Crear/actualizar usuarios' } },
+      { path: 'usuarios/:id', component: UsuarioComponent, data: { titulo: 'Crear/actualizar usuarios' } },
       // para el buscador
       { path: 'busqueda/:termino', component: BusquedaComponent, data: { titulo: 'Buscador' } },
 
       // area de configuracion
       { path: 'hoteles', component: HotelesComponent, data: { titulo: 'Hoteles' }  },
-      { path: 'hotel/:id', component: HotelComponent, data: { titulo: 'Crear/actualizar hotel'} },
+      { path: 'hoteles/:id', component: HotelComponent, data: { titulo: 'Crear/actualizar hotel'} },
       { path: 'horarios', component: HorariosComponent, data: { titulo: 'Horarios' } },
-      { path: 'horario/:id', component: HorarioComponent, data: { titulo: 'Crear/actualizar horario' } },
+      { path: 'horarios/:id', component: HorarioComponent, data: { titulo: 'Crear/actualizar horario' } },
       { path: 'estados', component: EstadosComponent, data: { titulo: 'Estados' } },
-      { path: 'estado/:id', component: EstadoComponent, data: { titulo: 'Crear/actualizar estado' } },
+      { path: 'estados/:id', component: EstadoComponent, data: { titulo: 'Crear/actualizar estado' } },
+      { path: 'permisos', component: PermisosComponent, data: { titulo: 'Permisos' } },
+      { path: 'permisos/:id', component: PermisoComponent, data: { titulo: 'Crear/actualizar permiso' } },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }
     ]
   }

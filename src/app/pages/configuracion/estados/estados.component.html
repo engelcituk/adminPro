@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="col text-right">
-                    <button [routerLink]="['/estado','nuevo']" routerLinkActive="router-link-active" class="btn btn-primary">
+                    <button [routerLink]="['/estados','nuevo']" routerLinkActive="router-link-active" class="btn btn-primary">
                         <i class="fa fa-plus"></i>
                         Agregar
                     </button>
@@ -55,7 +55,7 @@
                             <td>{{i+1}}</td>
                             <td>{{estado.estado}}</td>                           
                             <td>
-                                <button class="btn btn-primary" [routerLink]="['/estado',estado._id]">
+                                <button class="btn btn-primary" [routerLink]="['/estados',estado._id]">
                                     <i class="fas fa-edit"></i>
                                 </button> &nbsp;
 

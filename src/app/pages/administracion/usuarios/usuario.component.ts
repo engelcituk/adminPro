@@ -51,7 +51,7 @@ export class UsuarioComponent implements OnInit {
       this.usuario._id = usuario._id;
       // recargo la pagina
       this.router.navigateByUrl('/UsuarioComponent' , { skipLocationChange: true }).then(() => {
-        this.router.navigate(['usuario', this.usuario._id]);
+        this.router.navigate(['usuarios', this.usuario._id]);
       });
     });
   }

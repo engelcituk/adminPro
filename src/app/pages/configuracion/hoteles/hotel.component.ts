@@ -39,7 +39,7 @@ export class HotelComponent implements OnInit {
     }
     this.hotelService.saveHotel(this.hotel).subscribe(hotel => {
       this.hotel._id = hotel._id;
-      this.router.navigate(['/hotel', this.hotel._id]);
+      this.router.navigate(['/hoteles', this.hotel._id]);
     });
   }
 }

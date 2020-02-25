@@ -50,7 +50,7 @@ export class HorarioComponent implements OnInit {
     }
     this.horarioService.saveHorario(this.horario).subscribe(horario => {
       this.horario._id = horario._id;
-      this.router.navigate(['/horario', this.horario._id]);
+      this.router.navigate(['/horarios', this.horario._id]);
     });
   }
 

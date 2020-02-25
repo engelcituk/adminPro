@@ -48,7 +48,7 @@ export class ClienteComponent implements OnInit {
       this.cliente._id = cliente._id;
       // recargo la pagina
       this.router.navigateByUrl('/ClienteComponent', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['cliente', this.cliente._id]);
+        this.router.navigate(['clientes', this.cliente._id]);
       });
     });
   }

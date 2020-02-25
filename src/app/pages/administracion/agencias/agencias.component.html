@@ -15,7 +15,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="col text-right">
-                    <button [routerLink]="['/agencia','nuevo']" routerLinkActive="router-link-active" class="btn btn-primary">
+                    <button [routerLink]="['/agencias','nuevo']" routerLinkActive="router-link-active" class="btn btn-primary">
                         <i class="fa fa-plus"></i> Agregar
                     </button>
                 </div>
@@ -54,7 +54,7 @@
                             <td>{{agencia.name}}</td>
                             <td>{{agencia.telefono}}</td>
                             <td>
-                                <button class="btn btn-primary" [routerLink]="['/agencia',agencia._id]">
+                                <button class="btn btn-primary" [routerLink]="['/agencias',agencia._id]">
                                     <i class="fas fa-edit"></i>
                                 </button> &nbsp;
 

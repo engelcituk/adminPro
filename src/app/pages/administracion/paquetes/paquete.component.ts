@@ -48,7 +48,7 @@ export class PaqueteComponent implements OnInit {
       this.router
         .navigateByUrl('/PaqueteComponent', { skipLocationChange: true })
         .then(() => {
-          this.router.navigate(['paquete', this.paquete._id]);
+          this.router.navigate(['paquetes', this.paquete._id]);
         });
     });
   }
