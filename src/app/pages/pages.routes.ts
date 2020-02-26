@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { PagesComponent } from './pages.component';// engloba todas las paginas internas 
+import { PagesComponent } from './pages.component'; // engloba todas las paginas internas
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { ReportesComponent } from './dashboard/reportes/reportes.component';
 import { AgendaComponent } from './dashboard/agenda/agenda.component';

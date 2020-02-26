@@ -1,1 +1,53 @@
-<p>rol works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="col text-right">
+                    <button [routerLink]="['/roles']" class="btn btn-warning">
+                        <i class="fa fa-arrow-left"></i>
+                        Volver
+                    </button>
+                </div>
+                <form ngNativeValidate class="row" #formRol="ngForm" (ngSubmit)="saveRol(formRol)">
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Identificador</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-clock"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="rol.identificador" name="identificador" type="text" required
+                                    class="form-control" [disabled]="disabledInputIdentificador">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group m-b-0">
+                            <label class="control-label">Nombre</label>
+                            <div class="input-group">
+                                <span class="input-group-addon input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-clock"></i>
+                                    </span>
+                                </span>
+                                <input [(ngModel)]="rol.name" name="name" type="text" required class="form-control">
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col text-right">
+                        <br>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-save"></i>
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

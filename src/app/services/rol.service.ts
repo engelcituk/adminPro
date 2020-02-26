@@ -67,7 +67,7 @@ export class RolService {
     const url = 'rol/';
     return this.http.delete(url + id).pipe(
       map((respuesta => {
-        Swal.fire('Rol borrada', 'La rol ha sido eliminada correctamente', 'success');
+        Swal.fire('Rol borrada', 'El rol ha sido eliminado correctamente', 'success');
         return true;
       }))
     );
