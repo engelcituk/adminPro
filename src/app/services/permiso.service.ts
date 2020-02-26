@@ -31,7 +31,7 @@ export class PermisoService {
         }));
 
     } else {
-      // creo la permiso
+      // creo el permiso
       return this.http.post(url, permiso).pipe(
         map((respuesta: any) => {
           Swal.fire('Permiso creado', permiso.name, 'success');

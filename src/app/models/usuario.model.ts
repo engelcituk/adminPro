@@ -9,7 +9,7 @@ export class Usuario {
         public role: string,
         public fechaAlta: string,
         public status: boolean,
-        public permisos: Permiso[],
+        public permisos?: Permiso[],
         public _id?: string,
 
     ) {

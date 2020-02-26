@@ -8,6 +8,7 @@ import { UsuarioService } from './../../../services/service.index';
   styles: []
 })
 export class HeaderComponent implements OnInit {
+  datosUsuario;
 
   constructor(
     public router: Router,
@@ -15,10 +16,17 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+      this.datosUsuario = this.getDatosUsuario();
   }
 
-  buscar(termino: string) {
-    this.router.navigate(['/busqueda', termino]);
+  // obtengo los datos desde localstorage usuario logueado
+  getDatosUsuario() {
+    if (localStorage.getItem('usuario')) {
+      this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+    } else {
+      this.datosUsuario = null;
+    }
+    return this.datosUsuario;
   }
 
 

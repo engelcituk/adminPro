@@ -14,7 +14,7 @@ export class PermisoComponent implements OnInit {
   formPermiso: FormGroup;
   permiso: Permiso = new Permiso('', '', false, '');
   idHotel: any;
-  identificador = false;
+  disabledInputCodeId = false;
 
   constructor(
     public permisoService: PermisoService,
@@ -28,7 +28,7 @@ export class PermisoComponent implements OnInit {
     if (id !== 'nuevo') {
       this.permisoService.getPermiso(id).subscribe((respuesta: Permiso) => {
         this.permiso = respuesta;
-        this.identificador = false;
+        this.disabledInputCodeId = true;
       });
     }
   }

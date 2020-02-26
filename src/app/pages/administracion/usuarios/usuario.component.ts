@@ -14,8 +14,8 @@ import {ROLES} from '../../../config/config';
 export class UsuarioComponent implements OnInit {
 
   formUsuario: FormGroup;
-  usuario: Usuario = new Usuario('', '', '', '', '', true);
-  campoPassword: boolean = true;
+  usuario: Usuario = new Usuario('', '', '', '', '', true, []);
+  campoPassword: boolean = false;
   roles: any;
 
 
@@ -33,7 +33,7 @@ export class UsuarioComponent implements OnInit {
       this.usuarioService.getUsuario(id)
         .subscribe((respuesta: Usuario) => {
           this.usuario = respuesta;
-          this.campoPassword = false;
+          this.campoPassword = true;
           console.log(this.usuario);
         });
     }
