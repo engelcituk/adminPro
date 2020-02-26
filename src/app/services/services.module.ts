@@ -17,6 +17,7 @@ import {
   PaqueteService,
   LugarService,
   PermisoService,
+  RolService,
   LoginGuard,
   VerificaTokenGuard
 } from './service.index';
@@ -37,6 +38,7 @@ import {
     PaqueteService,
     LugarService,
     PermisoService,
+    RolService,
     ModalEventoService,
     LoginGuard,
     VerificaTokenGuard

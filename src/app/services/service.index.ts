@@ -16,6 +16,8 @@ export { AgenciaService } from './agencia.service';
 export { PaqueteService } from './paquete.service';
 export { LugarService } from './lugar.service';
 export { PermisoService } from './permiso.service';
+export { RolService } from './rol.service';
+
 
 
 

@@ -63,7 +63,7 @@
                                     </span>
                                 </span>
                                 <select [(ngModel)]="usuario.role" name="role" class="form-control p-0">
-                                    <option  value="USER_ROLE">Usuario</option>
+                                   <option  value="USER_ROLE">Usuario</option>
                                     <option  value="ADMIN_ROLE">Admin</option>
                                 </select>
                             </div>
@@ -72,14 +72,9 @@
                     <div class="col-6">
                         <label class="control-label">Estado</label>
                         <div class="demo-radio-button">
-
-                            <input [(ngModel)]="usuario.status" name="status" type="radio" id="radio_1" [value]="true"
-                                class="radio-col-light-green" required>
-
+                            
+                            <input [(ngModel)]="usuario.status" name="status" type="checkbox" id="radio_1" class="radio-col-light-green">
                             <label for="radio_1">activo</label>
-                            <input [(ngModel)]="usuario.status" name="status" type="radio" id="radio_2" [value]="false"
-                                class="radio-col-red" required>
-                            <label for="radio_2">desactivado</label>
                         </div>
                     </div>
 

@@ -69,6 +69,9 @@ export class SidebarService {
         },
         {
           titulo: 'Permisos', url: '/permisos'
+        },
+        {
+          titulo: 'Roles', url: '/roles'
         }
       ]
     }

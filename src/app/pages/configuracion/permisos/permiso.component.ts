@@ -14,7 +14,7 @@ export class PermisoComponent implements OnInit {
   formPermiso: FormGroup;
   permiso: Permiso = new Permiso('', '', false, '');
   idHotel: any;
-  disabledInputCodeId = false;
+  disabledInputIdentificador = false;
 
   constructor(
     public permisoService: PermisoService,
@@ -28,7 +28,7 @@ export class PermisoComponent implements OnInit {
     if (id !== 'nuevo') {
       this.permisoService.getPermiso(id).subscribe((respuesta: Permiso) => {
         this.permiso = respuesta;
-        this.disabledInputCodeId = true;
+        this.disabledInputIdentificador = true;
       });
     }
   }
@@ -46,6 +46,7 @@ export class PermisoComponent implements OnInit {
     this.permisoService.savePermiso(this.permiso).subscribe(permiso => {
       this.permiso._id = permiso._id;
       this.router.navigate(['/permisos', this.permiso._id]);
+      this.disabledInputIdentificador = true;
     });
   }
 

@@ -55,7 +55,7 @@
                     <tbody>
                         <tr *ngFor="let permiso of permisos; let i = index">
                             <td>{{i+1}}</td>
-                            <td>{{permiso.codeId}}</td>
+                            <td>{{permiso.identificador}}</td>
                             <td>{{permiso.name}}</td>
                             <td>
                                 <button class="btn btn-primary" [routerLink]="['/permisos',permiso._id]">

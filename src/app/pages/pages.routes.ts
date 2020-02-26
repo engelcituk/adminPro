@@ -1,6 +1,6 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { PagesComponent } from './pages.component';
+import { PagesComponent } from './pages.component';// engloba todas las paginas internas 
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { ReportesComponent } from './dashboard/reportes/reportes.component';
 import { AgendaComponent } from './dashboard/agenda/agenda.component';
@@ -34,6 +34,8 @@ import { EstadoComponent } from './configuracion/estados/estado.component';
 import { EstadosComponent } from './configuracion/estados/estados.component';
 import { PermisosComponent } from './configuracion/permisos/permisos.component';
 import { PermisoComponent } from './configuracion/permisos/permiso.component';
+import { RolesComponent } from './configuracion/roles/roles.component';
+import { RolComponent } from './configuracion/roles/rol.component';
 
 import { LoginGuard, VerificaTokenGuard } from '../services/service.index';
 
@@ -80,6 +82,8 @@ const pageRoutes: Routes = [
       { path: 'horarios/:id', component: HorarioComponent, data: { titulo: 'Crear/actualizar horario' } },
       { path: 'estados', component: EstadosComponent, data: { titulo: 'Estados' } },
       { path: 'estados/:id', component: EstadoComponent, data: { titulo: 'Crear/actualizar estado' } },
+      { path: 'roles', component: RolesComponent, data: { titulo: 'Roles' } },
+      { path: 'roles/:id', component: RolComponent, data: { titulo: 'Crear/actualizar rol' } },
       { path: 'permisos', component: PermisosComponent, data: { titulo: 'Permisos' } },
       { path: 'permisos/:id', component: PermisoComponent, data: { titulo: 'Crear/actualizar permiso' } },
       { path: '', pathMatch: 'full', redirectTo: '/dashboard' }

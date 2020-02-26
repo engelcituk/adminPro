@@ -42,6 +42,8 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ModalEventosComponent } from '../components/modal-eventos/modal-eventos.component';
 import { PermisosComponent } from './configuracion/permisos/permisos.component';
 import { PermisoComponent } from './configuracion/permisos/permiso.component';
+import { RolesComponent } from './configuracion/roles/roles.component';
+import { RolComponent } from './configuracion/roles/rol.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +77,9 @@ import { PermisoComponent } from './configuracion/permisos/permiso.component';
     BusquedaComponent,
     ModalEventosComponent,
     PermisosComponent,
-    PermisoComponent
+    PermisoComponent,
+    RolesComponent,
+    RolComponent
   ],
   exports: [DashboardComponent, ReportesComponent, AgendaComponent],
   imports: [

@@ -18,14 +18,14 @@
                                         <i class="fas fa-clock"></i>
                                     </span>
                                 </span>
-                                <input [(ngModel)]="permiso.codeId" name="codeId" type="text" required class="form-control" [disabled]="disabledInputCodeId">
+                                <input [(ngModel)]="permiso.identificador" name="identificador" type="text" required class="form-control" [disabled]="disabledInputIdentificador">
 
                             </div>
                         </div>
                     </div>
                     <div class="col-4">
                         <div class="form-group m-b-0">
-                            <label class="control-label">Identificador</label>
+                            <label class="control-label">Nombre</label>
                             <div class="input-group">
                                 <span class="input-group-addon input-group-prepend">
                                     <span class="input-group-text">
@@ -43,8 +43,7 @@
                             <div class="demo-radio-button">
                             
                                 <input [(ngModel)]="permiso.status" name="status" type="checkbox" id="radio_1" 
-                                    class="radio-col-light-green">
-                            
+                                    class="radio-col-light-green">                            
                                 <label for="radio_1">activo</label>
                                 <!-- <input [(ngModel)]="permiso.status" name="status" type="radio" id="radio_2" [value]="false" class="radio-col-red"
                                     required>
