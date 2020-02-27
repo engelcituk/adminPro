@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { DataTablesModule } from 'angular-datatables'; // module para datatables
+// import { Select2Module } from 'ng2-select2';
 
 // importo rutas hijas
 import { PAGES_ROUTES } from './pages.routes';
@@ -81,14 +82,19 @@ import { RolComponent } from './configuracion/roles/rol.component';
     RolesComponent,
     RolComponent
   ],
-  exports: [DashboardComponent, ReportesComponent, AgendaComponent],
+  exports: [
+    DashboardComponent,
+    ReportesComponent,
+    AgendaComponent
+  ],
   imports: [
     SharedModule,
     PAGES_ROUTES,
     FormsModule,
     ReactiveFormsModule,
     ChartsModule,
-    DataTablesModule // para hacer funcionar datatable
+    DataTablesModule, // para hacer funcionar datatable
+    // Select2Module // para usar select2
   ],
   providers: []
 })
