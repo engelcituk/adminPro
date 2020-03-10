@@ -37,7 +37,6 @@ export class RolService {
           return respuesta.rol;
         }));
     }
-
   }
 
   getRoles(desde: number = 0) {
