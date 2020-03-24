@@ -50,7 +50,6 @@ export class UsuarioComponent implements OnInit {
     }
 
     // this.roles = ROLES;
-    
   }
   // para guardar a un nuevo usuario
   saveUsuario(formUsuario: NgForm) {

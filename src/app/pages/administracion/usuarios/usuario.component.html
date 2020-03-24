@@ -54,10 +54,13 @@
                         </div>
                     </div>
                         <br>                                                                       
-                    <div class="col-2"> 
-                        <label class="control-label">Roles</label>
-                        <select2 [data]="exampleData" [width]="300" [options]="options"></select2>
-                    </div>
+                        <!-- <div>
+                            <div *ngFor="let rol of roles">
+                                <input type="checkbox" [(ngModel)]="rol.checked" />
+                                <label>{{rol.name}}</label>
+                            </div>
+                            <pre>{{ rols | json }}</pre>
+                        </div> -->
                                                     
                    <div class="col-6">
                         <label class="control-label">Estado</label>
